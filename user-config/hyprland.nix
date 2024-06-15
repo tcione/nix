@@ -180,9 +180,9 @@
       "move 100%-122 100%-42,title:^(.*?Sharing Indicator)$"
       "size 110 30,title:^(.*?Sharing Indicator)$"
 
-      # Neofetch data
-      "float,class:^tui(btm|neofetch)$"
-      "center,class:^tui(btm|neofetch)$"
+      # Fastfetch data
+      "float,class:^tui(btm|fastfetch)$"
+      "center,class:^tui(btm|fastfetch)$"
     ];
   };
 }

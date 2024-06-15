@@ -112,7 +112,7 @@
         };
         "custom/system" = {
           format = "";
-          on-click = "kitty --class tuineofetch --hold neofetch";
+          on-click = "kitty --class tuifastfetch --hold fastfetch";
         };
         "custom/power" = {
           format = "";

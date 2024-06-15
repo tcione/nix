@@ -14,7 +14,7 @@
       git
       kitty
       lm_sensors
-      neofetch
+      fastfetch
       obsidian
       orpie
       ripgrep
