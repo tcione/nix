@@ -125,6 +125,7 @@
       ../../user-config/vim.nix
       ../../user-config/waybar.nix
       ../../user-config/wofi.nix
+      ../../user-config/yazi.nix
       ../../user-config/zoxide.nix
       ../../user-config/zsh.nix
     ];
