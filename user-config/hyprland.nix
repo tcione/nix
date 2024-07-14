@@ -165,7 +165,6 @@
     ];
     dwindle.pseudotile = "yes";
     dwindle.preserve_split = "yes";
-    master.new_is_master = true;
     gestures.workspace_swipe = "off";
     windowrulev2 = [
       "workspace 5 silent,class:^signal$"
