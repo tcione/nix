@@ -25,6 +25,7 @@
       unzip
       via
       zip
+      neovide
 
       # Browsers
       firefox
