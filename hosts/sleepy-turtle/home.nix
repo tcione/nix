@@ -34,7 +34,6 @@
       # Desktop
       clipman
       grim
-      hyprcursor
       hyprpicker
       kooha
       networkmanagerapplet
@@ -101,6 +100,13 @@
       "Liberation Serif"
       "Noto Serif"
     ];
+
+    home.pointerCursor = {
+      name = "phinger-cursors-dark";
+      package = pkgs.phinger-cursors;
+      size = 24;
+      gtk.enable = true;
+    };
 
     imports = [
       ../../user-config/command-not-found.nix

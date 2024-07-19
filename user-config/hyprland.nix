@@ -41,8 +41,6 @@
       "1password --silent --disable-gpu-compositing"
     ];
     env = [
-      "HYPRCURSOR_THEME,Catppuccin-Mocha-Dark-Cursors"
-      "HYPRCURSOR_SIZE,24"
       "SDL_VIDEODRIVER,wayland"
       "MOZ_ENABLE_WAYLAND,1"
       "XDG_CURRENT_DESKTOP,Hyprland"

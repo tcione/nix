@@ -6,7 +6,7 @@
     settings = {
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
-        cursor-theme = "Catppuccin-Mocha-Dark-Cursors";
+        gtk-theme = "Catppuccin-Mocha-Standard-Peach-Dark";
       };
     };
   };
