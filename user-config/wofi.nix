@@ -19,18 +19,27 @@
       #outer-box {
         border: 2px solid rgba(255, 137, 180, 0.4);
         border-radius: 10px;
+        padding-top: 8px;
+        padding-right: 8px;
+        padding-bottom: 8px;
+        padding-left: 8px;
         background: #1e1e2e;
       }
 
       #input {
-        border-radius: 10px;
-        padding-top: 6px;
-        padding-bottom: 6px;
+        border-radius: 8px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        margin-bottom: 8px;
         font-size: 16px;
         font-weight: 700;
+        border: none;
+        box-shadow: none;
+        border: 1px solid #191929;
       }
 
       .entry {
+        border-radius: 8px;
         padding-top: 2px;
         padding-bottom: 2px;
       }
