@@ -4,12 +4,12 @@
   gtk = {
     enable = true;
     theme = {
-      name = "WhiteSur-Dark-solid";
+      name = "WhiteSur-Dark-solid-purple";
       package = pkgs.whitesur-gtk-theme.override {
         altVariants = [ "normal" ];
         colorVariants = [ "Dark" ];
         opacityVariants = [ "solid" ];
-        themeVariants = [ "default" ];
+        themeVariants = [ "purple" ];
       };
     };
     iconTheme = {
