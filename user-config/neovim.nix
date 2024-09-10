@@ -311,8 +311,10 @@
               },
             },
             on_open = function(win)
+              require('cmp').setup.buffer { enabled = false }
             end,
             on_close = function()
+              require('cmp').setup.buffer { enabled = true }
             end,
           })
         '';
