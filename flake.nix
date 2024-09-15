@@ -7,7 +7,6 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
   outputs = { self, nixpkgs, home-manager, ...}@inputs: {
