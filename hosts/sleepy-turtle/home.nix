@@ -9,12 +9,13 @@
     home.packages = with pkgs; [
       bat
       bottom
+      fastfetch
       fd
       gh
       git
       kitty
       lm_sensors
-      fastfetch
+      neovide
       obsidian
       orpie
       ripgrep
@@ -22,10 +23,10 @@
       spotify
       tcl
       tldr
+      todoist-electron
       unzip
       via
       zip
-      neovide
 
       # Browsers
       firefox
