@@ -159,10 +159,14 @@
         type = "lua";
         config = builtins.readFile(./neovim/zen-mode.lua);
       }
+      {
+        plugin = oil-nvim;
+        type = "lua";
+        config = builtins.readFile(./neovim/oil-nvim.lua);
+      }
       quickfix-reflector-vim
       vim-eunuch
       vim-fugitive
-      vim-vinegar
       BufOnly-vim
       PreserveNoEOL
       ferret
