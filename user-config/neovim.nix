@@ -20,6 +20,7 @@
       clang-tools
       gopls
       nodePackages_latest.vscode-langservers-extracted
+      ltex-ls
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -96,6 +97,40 @@
         config = ''
           local nvim_lsp = require('lspconfig')
 
+          -- Taken from github:Allaman/nvim
+          -- functions.lua
+          local notify = function(message, level, title)
+            local notify_options = {
+              title = title,
+              timeout = 2000
+            }
+            vim.api.nvim_notify(message, level, notify_options)
+          end
+
+          -- Taken from github:Allaman/nvim
+          -- utils.lua
+          local set_ltex_lang = function(lang)
+            local clients = vim.lsp.get_clients({ buffer = 0 })
+
+            for _, client in ipairs(clients) do
+              if client.name == "ltex" then
+                notify("Set ltex-ls lang to " .. lang, vim.log.levels.INFO, "set_ltex_lang")
+                client.config.settings.ltex.language = lang
+                vim.lsp.buf_notify(0, "workspace/didChangeConfiguration", { settings = client.config.settings })
+                return
+              end
+            end
+          end
+
+          -- Taken from github:Allaman/nvim
+          -- lsp.lua
+          vim.api.nvim_create_user_command(
+            "LtexLang",
+            -- "lua require('core.plugins.lsp.utils').set_ltex_lang(<q-args>)",
+            "set_ltex_lang(<q-args>)",
+            { nargs = 1, desc = "Set ltex-ls language" }
+          )
+
           local on_lsp_attach = function(client, bufnr)
             local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
             local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -131,7 +166,6 @@
           capabilities.textDocument.completion.completionItem.snippetSupport = true
           capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-
           nvim_lsp.solargraph.setup({
             cmd = { "solargraph", "stdio" },
             on_attach = on_lsp_attach,
@@ -164,6 +198,23 @@
           nvim_lsp.html.setup({
             on_attach = on_lsp_attach,
             capabilities = capabilities,
+          })
+          nvim_lsp.ltex.setup({
+            on_attach = on_lsp_attach,
+            filetypes = {
+              "markdown",
+              "text",
+              "gitcommit",
+              "plaintext"
+            },
+            flags = {
+              debounce_text_changes = 300
+            },
+            settings = {
+              ltex = {
+                  language = "en-US"
+              }
+            }
           })
         '';
       }
