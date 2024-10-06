@@ -40,8 +40,6 @@
         plugin = telescope-nvim;
         type = "lua";
         config = ''
-
-
           local actions = require('telescope.actions')
           local telescope = require('telescope')
           telescope.load_extension('fzf')
@@ -115,62 +113,7 @@
       {
         plugin = nvim-cmp;
         type = "lua";
-        config = ''
-          local cmp_has_words_before = function()
-            unpack = unpack or table.unpack
-            local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-            return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-          end
-
-          local cmp = require('cmp')
-          local luasnip = require('luasnip')
-
-          cmp.setup({
-            snippet = {
-              expand = function(args)
-                require('luasnip').lsp_expand(args.body)
-              end,
-            },
-            mapping = {
-              ["<C-k>"] = cmp.mapping.select_prev_item(),
-              ["<C-j>"] = cmp.mapping.select_next_item(),
-              ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-              ["<C-f>"] = cmp.mapping.scroll_docs(4),
-              ["<C-Space>"] = cmp.mapping.complete(),
-              ["<C-e>"] = cmp.mapping.close(),
-              ["<C-CR>"] = cmp.mapping.confirm({
-                behavior = cmp.ConfirmBehavior.Replace,
-                select = true,
-              }),
-              ["<Tab>"] = cmp.mapping(function(fallback)
-                if cmp.visible() then
-                  cmp.confirm()
-                elseif luasnip.expand_or_jumpable() then
-                  luasnip.expand_or_jump()
-                elseif cmp_has_words_before() then
-                  cmp.complete()
-                else
-                  fallback()
-                end
-              end, { "i", "s" }),
-              ["<S-Tab>"] = cmp.mapping(function(fallback)
-                if cmp.visible() then
-                  cmp.confirm()
-                elseif luasnip.jumpable(-1) then
-                  luasnip.jump(-1)
-                else
-                  fallback()
-                end
-              end, { "i", "s" }),
-            },
-            sources = {
-              { name = 'luasnip' },
-              { name = 'nvim_lsp' },
-              { name = 'path' },
-              { name = 'buffer' },
-            }
-          })
-        '';
+        config = builtins.readFile(./neovim/nvim-cmp.lua);
       }
 
       # Random
@@ -214,39 +157,7 @@
       {
         plugin = zen-mode-nvim;
         type = "lua";
-        config = ''
-          require("zen-mode").setup({
-            window = {
-              backdrop = 1,
-              width = 80,
-              height = 1,
-              options = {
-                signcolumn = "no",
-                number = false,
-                colorcolumn = "",
-              },
-            },
-            plugins = {
-              options = {
-                enabled = true,
-                ruler = true,
-                showcmd = false,
-                relativenumber = false,
-                spell = true,
-              },
-              kitty = {
-                enabled = false,
-                font = "+4",
-              },
-            },
-            on_open = function(win)
-              require('cmp').setup.buffer { enabled = false }
-            end,
-            on_close = function()
-              require('cmp').setup.buffer { enabled = true }
-            end,
-          })
-        '';
+        config = builtins.readFile(./neovim/zen-mode.lua);
       }
       quickfix-reflector-vim
       vim-eunuch
@@ -256,100 +167,7 @@
       PreserveNoEOL
       ferret
     ];
-
-    extraConfig = ''
-      function! DeleteTrailingWhiteSpace()
-        exe "normal mz"
-        %s/\s\+$//ge
-        exe "normal `z"
-      endfunc
-
-      let mapleader = ","
-      let g:mapleader = ","
-      let maplocalleader = "\\"
-
-      filetype plugin indent on
-
-      set exrc
-      set guicursor=
-      set relativenumber
-      set hidden
-      set number
-      set noswapfile
-      set nobackup
-      set nowritebackup
-      set undodir=~/.vim/undodir
-      set undofile
-      set incsearch
-      set scrolloff=8
-      set expandtab
-      set smarttab
-      set shiftwidth=2
-      set tabstop=2
-      set autoindent
-      set smartindent
-      " set wrap
-      " set wrapmargin=2
-      set noerrorbells
-      set novisualbell
-      set colorcolumn=80
-      set signcolumn=yes
-      set termguicolors
-      set autoread
-      set clipboard=unnamedplus
-      set noshowcmd
-      set encoding=utf8
-      set ffs=unix,dos,mac
-      set backspace=eol,start,indent
-      set whichwrap+=<,>,h,l
-      set hlsearch
-      set showmatch
-      set timeoutlen=500
-      set synmaxcol=1000
-      set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<
-      set list
-      set breakindent
-      set breakindentopt=shift:2,min:40,sbr
-      set linebreak
-      set shada^=%
-      set completeopt=menu,menuone,noselect
-      set laststatus=3
-
-      " =========================================
-      " Mappings
-      " =========================================
-      nmap <leader>w :w!<cr>
-      map 0 ^
-      map <space> /
-      map <c-space> ?
-      map <C-j> <C-W>j
-      map <C-k> <C-W>k
-      map <C-h> <C-W>h
-      map <C-l> <C-W>l
-
-      nnoremap <leader>p <cmd>Telescope find_files<cr>
-      nnoremap ; <cmd>Telescope buffers<cr>
-      nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-      nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
-      " =========================================
-      " Initialization commands
-      " =========================================
-      augroup tcione
-        autocmd!
-        autocmd BufWrite * :call DeleteTrailingWhiteSpace()
-        " Return to last edit position when opening files
-        autocmd BufReadPost *
-             \ if line("'\"") > 0 && line("'\"") <= line("$") |
-             \   exe "normal! g`\"" |
-             \ endif
-      augroup END
-
-      augroup highlight_yank
-        autocmd!
-        autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
-      augroup END
-    '';
+    extraConfig = builtins.readFile(./neovim/baseline.vim);
     extraLuaConfig = ''
     '';
   };
