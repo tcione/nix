@@ -7,6 +7,7 @@
     programs.home-manager.enable = true;
 
     home.packages = with pkgs; [
+      appimage-run
       bat
       bottom
       fastfetch
