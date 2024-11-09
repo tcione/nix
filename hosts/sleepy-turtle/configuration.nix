@@ -53,6 +53,10 @@
   programs.light.enable = true;
   programs.seahorse.enable = true;
   programs.ssh.startAgent = true;
+  programs.steam.enable = true;
+  programs.steam.remotePlay.openFirewall = true;
+  programs.steam.dedicatedServer.openFirewall = true;
+  programs.steam.localNetworkGameTransfers.openFirewall = true;
   programs.zsh.enable = true;
 
   security.pam.services.hyprlock = {};
