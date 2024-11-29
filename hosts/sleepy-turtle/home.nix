@@ -61,7 +61,7 @@
       catppuccin-cursors
       catppuccin-gtk
       glib
-      gnome3.adwaita-icon-theme
+      adwaita-icon-theme
 
       # - File manager
       xfce.thunar
@@ -80,7 +80,7 @@
       font-awesome
       liberation_ttf
       noto-fonts
-      noto-fonts-cjk
+      noto-fonts-cjk-sans
       noto-fonts-emoji
       roboto-slab
       ubuntu_font_family
