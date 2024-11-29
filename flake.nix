@@ -7,9 +7,34 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    darwin = {
+      url = "github:lnl7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ...}@inputs: {
+  outputs = { self, nixpkgs, home-manager, darwin, ...}@inputs:
+  let
+    system = "x86_64-linux";
+  in {
+    darwinConfigurations = {
+      MAC2022HJ49 = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [
+          ./hosts/MAC2022HJ49/default.nix
+          home-manager.darwinModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.lapis = {
+              imports = [
+                ./hosts/MAC2022HJ49/home.nix
+              ];
+            };
+          }
+        ];
+      };
+    };
+
     nixosConfigurations.sleepy-turtle = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
