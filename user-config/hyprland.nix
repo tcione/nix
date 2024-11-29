@@ -148,10 +148,6 @@
     general.layout = "dwindle";
     decoration.rounding = 10;
     decoration.inactive_opacity = 1.0;
-    decoration.drop_shadow = "no";
-    decoration.shadow_range = 4;
-    decoration.shadow_render_power = 3;
-    decoration."col.shadow" = "rgba(1a1a1aee)";
     animations.enabled = "yes";
     animations.bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
     animation = [

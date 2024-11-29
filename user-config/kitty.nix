@@ -3,7 +3,7 @@
 {
   programs.kitty = {
     enable = true;
-    theme = "Catppuccin-Mocha";
+    themeFile = "Catppuccin-Mocha";
     font = {
       package = pkgs.fira-code-symbols;
       name = "Fira Code Medium";
