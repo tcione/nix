@@ -13,6 +13,7 @@
       fastfetch
       fd
       gh
+      gimp
       git
       kitty
       lm_sensors

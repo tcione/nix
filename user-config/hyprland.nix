@@ -118,7 +118,7 @@
     ];
     monitor = [
       ", highres, auto, 1"
-      "eDP-1, highres, auto, 1.5666"
+      "eDP-1, highres, auto, 1"
       "DP-1, 2560x1440@120, auto, 1"
     ];
     workspace = [
