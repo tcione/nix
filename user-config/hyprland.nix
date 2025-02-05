@@ -36,7 +36,6 @@
       "wl-paste -t text --watch clipman store --no-persist"
       "wl-paste -t image --watch clipman store --no-persist"
       "udiskie &"
-      "systemctl --user start gammastep"
       "systemctl --user start waybar"
       "1password --silent --disable-gpu-compositing"
     ];
