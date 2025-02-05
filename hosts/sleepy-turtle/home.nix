@@ -29,6 +29,7 @@
       unzip
       via
       zip
+      mullvad-vpn
 
       # Browsers
       firefox
