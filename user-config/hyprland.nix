@@ -37,6 +37,7 @@
       "wl-paste -t image --watch clipman store --no-persist"
       "udiskie &"
       "systemctl --user start waybar"
+      "systemctl --user start sunset"
       "1password --silent --disable-gpu-compositing"
     ];
     env = [
