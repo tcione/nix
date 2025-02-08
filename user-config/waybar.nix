@@ -97,11 +97,11 @@
           format-icons = ["" "" "" "" ""];
         };
         network = {
-          format-wifi = "{essid} ({signalStrength}%) ";
+          format-wifi = "{signalStrength}%  ";
           format-ethernet = "";
-          tooltip-format = "{ipaddr}/{cidr} @ {ifname} via {gwaddr} ";
+          tooltip-format = "{essid} - {ipaddr}/{cidr} @ {ifname} via {gwaddr} ";
           format-linked = "{ifname} (No IP) ";
-          format-disconnected = " ⚠";
+          format-disconnected = "⚠";
           format-alt = "{ifname}: {ipaddr}/{cidr}";
         };
         pulseaudio = {
