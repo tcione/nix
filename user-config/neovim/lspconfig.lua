@@ -68,6 +68,21 @@ nvim_lsp.html.setup({
   on_attach = on_lsp_attach,
   capabilities = capabilities,
 })
+nvim_lsp.lua_ls.setup({
+  on_attach = on_lsp_attach,
+  capabilities = capabilities,
+  settings = {
+    Lua = {
+      diagnostics ={
+          globals = { "vim", "love" }
+      }
+    }
+  }
+})
+nvim_lsp.zls.setup({
+  on_attach = on_lsp_attach,
+  capabilities = capabilities,
+})
 nvim_lsp.ltex.setup({
   on_attach = on_lsp_attach,
   filetypes = {

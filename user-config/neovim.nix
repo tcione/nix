@@ -21,6 +21,8 @@
       gopls
       nodePackages_latest.vscode-langservers-extracted
       ltex-ls
+      lua-language-server
+      zls
     ];
 
     plugins = with pkgs.vimPlugins; [
