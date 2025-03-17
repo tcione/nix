@@ -13,6 +13,7 @@
       fastfetch
       fd
       gh
+      gimp
       git
       kitty
       lm_sensors
@@ -28,6 +29,7 @@
       unzip
       via
       zip
+      mullvad-vpn
 
       # Browsers
       firefox
@@ -38,6 +40,7 @@
       clipman
       grim
       hyprpicker
+      hyprsunset
       kooha
       networkmanagerapplet
       slurp
@@ -111,6 +114,32 @@
       gtk.enable = true;
     };
 
+    systemd.user.services.sunset = {
+      Unit = {
+        Description = "Set screen temperature based on time of the day.";
+      };
+      Install = {
+        WantedBy = [ "default.target" ];
+      };
+      Service = {
+        ExecStart = "${pkgs.writeShellScript "sunset" ''
+          #!/bin/bash
+
+          while true; do
+            HOUR=$(date +%H)
+
+            if [[ $HOUR -ge "07" && $HOUR -le "18" ]]; then
+              ${pkgs.hyprsunset} -t 6000 > /dev/null 2>&1 &
+            else
+              ${pkgs.hyprsunset} -t 2800 > /dev/null 2>&1 &
+            fi
+
+            sleep 3600
+          done;
+        ''}";
+      };
+    };
+
     imports = [
       ../../user-config/command-not-found.nix
       ../../user-config/dconf.nix
@@ -119,7 +148,6 @@
       ../../user-config/dunst.nix
       ../../user-config/eza.nix
       ../../user-config/fzf.nix
-      ../../user-config/gammastep.nix
       ../../user-config/git.nix
       ../../user-config/gtk.nix
       ../../user-config/hypridle.nix

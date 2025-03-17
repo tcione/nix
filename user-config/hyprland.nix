@@ -36,8 +36,8 @@
       "wl-paste -t text --watch clipman store --no-persist"
       "wl-paste -t image --watch clipman store --no-persist"
       "udiskie &"
-      "systemctl --user start gammastep"
       "systemctl --user start waybar"
+      "systemctl --user start sunset"
       "1password --silent --disable-gpu-compositing"
     ];
     env = [
@@ -118,7 +118,7 @@
     ];
     monitor = [
       ", highres, auto, 1"
-      "eDP-1, highres, auto, 1.5666"
+      "eDP-1, highres, auto, 2"
       "DP-1, 2560x1440@120, auto, 1"
     ];
     workspace = [
@@ -137,7 +137,7 @@
     input.kb_rules = "";
     input.follow_mouse = 1;
     input.touchpad.natural_scroll = "no";
-    input.touchpad.scroll_factor = 0.8;
+    input.touchpad.scroll_factor = 1;
     input.touchpad.tap-to-click = false;
     input.sensitivity = 0;
     general.gaps_in = 2;

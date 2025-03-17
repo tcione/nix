@@ -20,14 +20,25 @@
           "idle_inhibitor"
           "pulseaudio"
           "backlight"
-          "cpu"
-          "memory"
-          "temperature"
-          "battery"
+          "group/hardware"
           "network"
           "clock"
           "custom/power"
         ];
+        "group/hardware" = {
+          orientation = "horizontal";
+          drawer = {
+              transition-duration = 500;
+              children-class = "not-battery";
+              transition-left-to-right = true;
+          };
+          modules = [
+            "battery"
+            "cpu"
+            "memory"
+            "temperature"
+          ];
+        };
         "hyprland/workspaces" = {
           disable-scroll = true;
           all-outputs = true;
@@ -71,6 +82,7 @@
           on-click = "kitty --class tuibtm btm";
         };
         temperature = {
+          thermal-zone = 1;
           format = "{temperatureC}°C ";
         };
         battery = {
