@@ -16,16 +16,19 @@
       "homebrew/cask-fonts/font-fira-code-nerd-font"
       "imageoptim"
       "numi"
-      "spotify"
-      "the-unarchiver"
-      "visual-studio-code"
+      "orbstack"
       "rectangle"
-      "slack"
-      "superhuman"
       "signal"
+      "slack"
+      "spotify"
+      "superhuman"
+      "the-unarchiver"
       "todoist"
+      "visual-studio-code"
     ];
   };
+
+  system.stateVersion = 5;
 
   system.defaults = {
     screencapture = {

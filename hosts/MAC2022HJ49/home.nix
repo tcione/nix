@@ -3,7 +3,7 @@
 {
   home.username = "lapis";
   home.homeDirectory = "/Users/lapis";
-  home.stateVersion = "23.05";
+  home.stateVersion = "24.11";
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
@@ -20,11 +20,12 @@
     yarn
     libyaml
     gobject-introspection
+    e1s
   ];
 
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
     autocd = true;
@@ -42,11 +43,11 @@
 
   programs.kitty = {
     enable = true;
-    theme = "Catppuccin-Mocha";
+    themeFile = "Catppuccin-Mocha";
     font = {
       package = pkgs.fira-code-symbols;
       name = "Fira Code Medium";
-      size = 12;
+      size = 16;
     };
     keybindings = {
       "ctrl+." = "next_tab";
@@ -75,6 +76,11 @@
     extraConfig = ''
       font_features FiraCode-Medium +ss01 +ss02 +ss03 +ss04 +ss05 +ss07 +ss08 +zero +onum
     '';
+  };
+
+  programs.mise = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
   imports = [
