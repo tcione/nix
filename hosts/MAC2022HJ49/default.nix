@@ -47,7 +47,7 @@
       dashboard-in-overlay = true;
       enable-spring-load-actions-on-all-items = true;
       expose-animation-duration = 0.1;
-      expose-group-by-app = false;
+      expose-group-apps = false;
       launchanim = false;
       mineffect = "scale";
       minimize-to-application = true;
