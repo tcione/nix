@@ -30,6 +30,7 @@
       via
       zip
       mullvad-vpn
+      go
 
       # Browsers
       firefox
