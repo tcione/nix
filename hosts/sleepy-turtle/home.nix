@@ -31,6 +31,8 @@
       zip
       mullvad-vpn
       go
+      deno
+      nodejs_23
 
       # Browsers
       firefox
