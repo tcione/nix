@@ -55,7 +55,7 @@
       "CLUTTER_BACKEND,\"wayland\""
     ];
     bind = [
-      "$mod, Return, exec, kitty"
+      "$mod, Return, exec, ghostty"
       "$mod, Q, killactive,"
       "$mod, E, exec, thunar"
       "$mod, Space, togglefloating,"

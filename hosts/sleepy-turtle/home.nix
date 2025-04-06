@@ -163,9 +163,24 @@
               sha256 = "sha256:0yk3akkgq1r1dg0360bq0y4kgnnww8gvqa4lqnmwc4mkpwv6mkp4";
               version = "8.10.70.27";
             })
-
-
           ];
+    };
+
+    programs.ghostty = {
+      enable = true;
+      enableZshIntegration = true;
+      settings = {
+        theme = "catppuccin-mocha";
+        font-family = "Fira Code Medium";
+        font-size = 12;
+        font-feature = "+ss01 +ss02 +ss03 +ss04 +ss05 +ss07 +ss08 +zero +onum +calt";
+        window-padding-x = 2;
+        window-padding-y = 2;
+        cursor-style = "block";
+        cursor-text = "#222222";
+        cursor-style-blink = false;
+        window-theme = "ghostty";
+      };
     };
 
     imports = [
