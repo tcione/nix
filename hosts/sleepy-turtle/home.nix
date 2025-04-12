@@ -25,6 +25,7 @@
       obsidian
       orpie
       ripgrep
+      screen
       signal-desktop
       spotify
       tcl
