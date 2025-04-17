@@ -164,6 +164,12 @@
               sha256 = "sha256:0yk3akkgq1r1dg0360bq0y4kgnnww8gvqa4lqnmwc4mkpwv6mkp4";
               version = "8.10.70.27";
             })
+            (createChromiumExtension {
+              # Lexical Dev Tools
+              id = "kgljmdocanfjckcgfpcpdoklodllfdpc";
+              sha256 = "sha256:0vx5iznxk5wwn3qfmqs8zayqv1mxyszzppbngy6yzqb9nzqc52b9";
+              version = "0.16.0.0";
+            })
           ];
     };
 
