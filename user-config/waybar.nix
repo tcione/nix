@@ -136,8 +136,10 @@
           rewrite = {
             ".*\\[Signal\\].*" = "  Signal";
             ".*\\[firefox\\] (.*) — Mozilla Firefox" = "  $1";
+            ".*\\[chromium-browser\\](.*) - Chromium" = "  $1";
             ".*\\[kitty\\] (.*)" = "  $1";
             ".*\\[\\].*" = "٩(˘◡˘)۶";
+            ".*\\[com\.mitchellh\.ghostty\\] (.*)" = " $1";
           };
         };
       };
