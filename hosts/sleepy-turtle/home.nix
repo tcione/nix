@@ -35,6 +35,8 @@
       via
       vivaldi
       zip
+      v4l-utils
+      guvcview
 
       # Browsers
       firefox
