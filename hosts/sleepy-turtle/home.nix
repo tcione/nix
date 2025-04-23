@@ -37,6 +37,7 @@
       zip
       v4l-utils
       guvcview
+      sigil
 
       # Browsers
       firefox
