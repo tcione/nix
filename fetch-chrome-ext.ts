@@ -51,7 +51,13 @@ const extensions = [
     name: 'lexical-developer-tools',
     id: 'kgljmdocanfjckcgfpcpdoklodllfdpc',
     version: '134.0.6998.88'
+  },
+  {
+    name: 'grammarly-ai-writing-and',
+    id: 'kbfnbcaeplbcioakkpcpgfkobkghlhen',
+    version: '134.0.6998.88'
   }
+
 ]
 
 console.log('starting...')

@@ -173,6 +173,12 @@
               sha256 = "sha256:0vx5iznxk5wwn3qfmqs8zayqv1mxyszzppbngy6yzqb9nzqc52b9";
               version = "0.16.0.0";
             })
+            (createChromiumExtension {
+              # Grammarly
+              id = "kbfnbcaeplbcioakkpcpgfkobkghlhen";
+              sha256 = "sha256:067pcfmgfndkbjbdlw3r5inx4ll4xqm2r8f6y99mnyz4isx9awsx";
+              version = "14.1233.0";
+            })
           ];
     };
 
