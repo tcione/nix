@@ -221,7 +221,7 @@
 
             pkill -ef "hyprsunset -t" || true
 
-            if [[ "$TIME" > "$SUNSET" ]] && [[ "$TIME" < "$SUNRISE" ]]; then
+            if [[ "$TIME" > "$SUNSET" ]] || [[ "$TIME" < "$SUNRISE" ]]; then
               hyprctl keyword exec "hyprsunset -t 2800"
             else
               hyprctl keyword exec "hyprsunset -t 6000"
@@ -231,7 +231,7 @@
           ''
           );
         };
-        Install.WantedBy = [ "default.target" ];
+        Install.WantedBy = [ "hyprland-session.target" ];
       };
     };
 
