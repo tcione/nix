@@ -38,6 +38,7 @@
       v4l-utils
       guvcview
       sigil
+      jq
 
       # Browsers
       firefox
@@ -196,6 +197,53 @@
         cursor-text = "#222222";
         cursor-style-blink = false;
         window-theme = "ghostty";
+      };
+    };
+
+    systemd.user.services = {
+      sundial = {
+        Unit.Description = "sets screen temperature based on time of the day";
+        Service = {
+          Type = "oneshot";
+          ExecStart = toString (
+          pkgs.writeShellScript "sundial-timer" ''
+            #!/bin/bash
+
+            set -eou pipefail
+
+            BERLIN_LAT="52.5666644"
+            BERLIN_LON="13.3999984"
+            API_URL="https://api.sunrisesunset.io/json?lat=$BERLIN_LAT&lng=$BERLIN_LON&time_format=military"
+            TZ_DATA=$(curl "$API_URL")
+            TIME=$(date +%H%M)
+            SUNRISE=$(echo "$TZ_DATA" | jq '.results | .sunrise')
+            SUNSET=$(echo "$TZ_DATA" | jq '.results | .sunset')
+
+            pkill -ef "hyprsunset -t" || true
+
+            if [[ "$TIME" > "$SUNSET" ]] && [[ "$TIME" < "$SUNRISE" ]]; then
+              hyprctl keyword exec "hyprsunset -t 2800"
+            else
+              hyprctl keyword exec "hyprsunset -t 6000"
+            fi
+
+            exit 0
+          ''
+          );
+        };
+        Install.WantedBy = [ "default.target" ];
+      };
+    };
+
+    systemd.user.timers = {
+      sundialtimer = {
+        Unit.Description = "timer for sundial service";
+        Timer = {
+          Unit = "sundial";
+          OnBootSec = "1m";
+          OnUnitActiveSec = "30m";
+        };
+        Install.WantedBy = [ "timers.target" ];
       };
     };
 
