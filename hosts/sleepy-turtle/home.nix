@@ -206,7 +206,7 @@
         Service = {
           Type = "oneshot";
           ExecStart = toString (
-          pkgs.writeShellScript "sundial-timer" ''
+          pkgs.writeShellScript "sundial" ''
             #!/bin/bash
 
             set -eou pipefail
@@ -236,12 +236,11 @@
     };
 
     systemd.user.timers = {
-      sundialtimer = {
+      sundial = {
         Unit.Description = "timer for sundial service";
         Timer = {
-          Unit = "sundial";
-          OnBootSec = "1m";
-          OnUnitActiveSec = "30m";
+          Unit = "sundial.service";
+          OnCalendar = "*:0/30";
         };
         Install.WantedBy = [ "timers.target" ];
       };
