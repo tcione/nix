@@ -12,8 +12,8 @@
 
           set -eou pipefail
 
-          BERLIN_LAT="52.5666644"
-          BERLIN_LON="13.3999984"
+          BERLIN_LAT="52.56"
+          BERLIN_LON="13.39"
           API_URL="https://api.sunrisesunset.io/json?lat=$BERLIN_LAT&lng=$BERLIN_LON&time_format=military"
           TZ_DATA=$(curl "$API_URL")
           TIME=$(date +%H%M)
