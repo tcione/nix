@@ -10,6 +10,7 @@
       appimage-run
       bat
       bottom
+      brightnessctl
       deno
       fastfetch
       fd
