@@ -16,7 +16,7 @@
       fd
       filezilla
       gh
-      gimp
+      gimp3-with-plugins
       git
       go
       guvcview
