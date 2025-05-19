@@ -25,7 +25,7 @@
       lm_sensors
       mullvad-vpn
       neovide
-      nodejs_23
+      nodejs_24
       obsidian
       orpie
       ripgrep
