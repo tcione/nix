@@ -14,10 +14,13 @@
       deno
       fastfetch
       fd
+      filezilla
       gh
       gimp
       git
       go
+      guvcview
+      jq
       kitty
       lm_sensors
       mullvad-vpn
@@ -27,19 +30,17 @@
       orpie
       ripgrep
       screen
+      sigil
       signal-desktop
       spotify
       tcl
       tldr
       todoist-electron
       unzip
+      v4l-utils
       via
       vivaldi
       zip
-      v4l-utils
-      guvcview
-      sigil
-      jq
 
       # Browsers
       firefox
