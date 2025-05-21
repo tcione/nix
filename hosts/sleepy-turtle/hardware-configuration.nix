@@ -7,12 +7,15 @@
   # Imports come on top, because preferences, all the rest is alphabetical
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.extraModulePackages = [ ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/e3b181a8-193d-4aab-8a53-ef7aa4044478";
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelModules = [ "kvm-intel" "v4l2loopback" ];
   boot.kernelParams = [ "module_blacklist=hid_sensor_hub" ];
+  boot.extraModprobeConfig = ''
+    options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
+  '';
   fileSystems."/".device = "/dev/disk/by-label/nixos";
   fileSystems."/".fsType = "ext4";
   fileSystems."/boot".device = "/dev/disk/by-label/boot";

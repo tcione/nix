@@ -97,11 +97,11 @@
           format-icons = ["" "" "" "" ""];
         };
         network = {
-          format-wifi = "{essid} ({signalStrength}%) ";
+          format-wifi = "{signalStrength}%  ";
           format-ethernet = "";
-          tooltip-format = "{ipaddr}/{cidr} @ {ifname} via {gwaddr} ";
+          tooltip-format = "{essid} - {ipaddr}/{cidr} @ {ifname} via {gwaddr} ";
           format-linked = "{ifname} (No IP) ";
-          format-disconnected = " ⚠";
+          format-disconnected = "⚠";
           format-alt = "{ifname}: {ipaddr}/{cidr}";
         };
         pulseaudio = {
@@ -136,8 +136,10 @@
           rewrite = {
             ".*\\[Signal\\].*" = "  Signal";
             ".*\\[firefox\\] (.*) — Mozilla Firefox" = "  $1";
+            ".*\\[chromium-browser\\](.*) - Chromium" = "  $1";
             ".*\\[kitty\\] (.*)" = "  $1";
             ".*\\[\\].*" = "٩(˘◡˘)۶";
+            ".*\\[com\.mitchellh\.ghostty\\] (.*)" = " $1";
           };
         };
       };

@@ -7,7 +7,7 @@
       name = "WhiteSur-Dark-solid-purple";
       package = pkgs.whitesur-gtk-theme.override {
         altVariants = [ "normal" ];
-        colorVariants = [ "Dark" ];
+        colorVariants = [ "dark" ];
         opacityVariants = [ "solid" ];
         themeVariants = [ "purple" ];
       };

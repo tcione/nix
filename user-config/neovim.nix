@@ -21,6 +21,8 @@
       gopls
       nodePackages_latest.vscode-langservers-extracted
       ltex-ls
+      lua-language-server
+      zls
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -74,19 +76,7 @@
         plugin = trouble-nvim;
         type = "lua";
         config = ''
-          require("trouble").setup({
-            fold_open = "v",
-            fold_closed = ">",
-            indent_lines = true,
-            icons = false,
-            signs = {
-                error = "error",
-                warning = "warn",
-                hint = "hint",
-                information = "info"
-            },
-            use_lsp_diagnostic_signs = false
-          })
+          require("trouble").setup({ })
         '';
       }
       {

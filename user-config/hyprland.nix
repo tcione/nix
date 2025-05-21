@@ -37,8 +37,11 @@
       "wl-paste -t image --watch clipman store --no-persist"
       "udiskie &"
       "systemctl --user start waybar"
-      "systemctl --user start sunset"
-      "1password --silent --disable-gpu-compositing"
+      "systemctl --user start timers.target"
+      # "1password --silent --disable-gpu-compositing"
+      "1password --silent"
+      "todoist-electron"
+      "signal-desktop"
     ];
     env = [
       "SDL_VIDEODRIVER,wayland"
@@ -55,7 +58,7 @@
       "CLUTTER_BACKEND,\"wayland\""
     ];
     bind = [
-      "$mod, Return, exec, kitty"
+      "$mod, Return, exec, ghostty"
       "$mod, Q, killactive,"
       "$mod, E, exec, thunar"
       "$mod, Space, togglefloating,"
@@ -74,14 +77,22 @@
       "$mod SHIFT, l, movewindow, r"
       "$mod SHIFT, k, movewindow, u"
       "$mod SHIFT, j, movewindow, d"
-      "$mod , minus , togglespecialworkspace,"
-      "$mod SHIFT, minus , movetoworkspace , special"
       "$mod, mouse_down, workspace, e+1"
       "$mod, mouse_up, workspace, e-1"
       "$mod, TAB, cyclenext"
       "$mod SHIFT, TAB, exec, hyprctl dispatch focusurgentorlast"
+
+      # Special spaces
+      "$mod , minus , togglespecialworkspace,"
+      "$mod SHIFT, minus , movetoworkspace , special"
+      "$mod ALT, t , togglespecialworkspace, todoist"
+      "$mod ALT, s , togglespecialworkspace, signal"
+
+      # Screenshots
       "$mod, P, exec , grim -t jpeg ~/Pictures/$(date +%Y-%m-%d_%H-%m-%s).jpg"
       "$mod SHIFT, P , exec , grim -t jpeg -g \"$(slurp)\" ~/Pictures/$(date +%Y-%m-%d_%H-%m-%s).jpg"
+
+      # Media buttons
       "$mod SHIFT, BackSpace, exec, ~/.local/bin/power-menu.sh"
       ", XF86MonBrightnessUp , exec , light -T 1.4 && notify-send -h int:value:$(light -G) \" Brightness\""
       "SHIFT , XF86MonBrightnessUp , exec , light -A 1 && notify-send -h int:value:$(light -G) \" Brightness\""
@@ -118,7 +129,8 @@
     ];
     monitor = [
       ", highres, auto, 1"
-      "eDP-1, highres, auto, 2"
+      # "eDP-1, highres, auto, 2"
+      "eDP-1, 2880x1920@60, auto, 2"
       "DP-1, 2560x1440@120, auto, 1"
     ];
     workspace = [
@@ -161,8 +173,7 @@
     dwindle.preserve_split = "yes";
     gestures.workspace_swipe = "off";
     windowrulev2 = [
-      "workspace 5 silent,class:^signal$"
-      "workspace 6 silent,title:^Spotify$"
+      "workspace 6 silent,title:^.*Spotify.*$"
 
       # Paypal popup window
       "float,title:^(.*?Log in to your Paypal account)$"
@@ -176,6 +187,17 @@
       # Fastfetch data
       "float,class:^tui(btm|fastfetch)$"
       "center,class:^tui(btm|fastfetch)$"
+
+      # Special space
+      "float,class:Todoist"
+      "size 960 960,class:Todoist"
+      "center,class:Todoist"
+      "workspace special:todoist silent,class:Todoist"
+
+      "float,class:signal"
+      "size 960 960,class:signal"
+      "center,class:signal"
+      "workspace special:signal silent,class:signal"
     ];
   };
 }

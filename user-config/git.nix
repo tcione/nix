@@ -34,5 +34,19 @@
       "__todo.txt"
       "vim/.netrwhist"
     ];
+    extraConfig = {
+      init.defaultBranch = "main";
+      pull.rebase = false;
+    };
+    includes = [
+      {
+        condition = "gitdir:~/Projects/heyjobs/";
+        contents = {
+          user = {
+            email = "tales.cione@heyjobs.de";
+          };
+        };
+      }
+    ];
   };
 }

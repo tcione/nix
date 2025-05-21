@@ -8,7 +8,7 @@
     syntaxHighlighting.enable = true;
     autocd = true;
     defaultKeymap = "viins";
-    initExtra = ''
+    initContent = ''
       export PATH="$PATH:$HOME/.local/bin"
     '';
     profileExtra = ''

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
     home.username = "tortoise";
@@ -10,31 +10,41 @@
       appimage-run
       bat
       bottom
+      brightnessctl
+      deno
       fastfetch
       fd
+      filezilla
       gh
-      gimp
+      gimp3-with-plugins
       git
+      go
+      guvcview
+      jq
       kitty
       lm_sensors
+      mullvad-vpn
       neovide
+      nodejs_24
       obsidian
       orpie
       ripgrep
+      screen
+      sigil
       signal-desktop
       spotify
       tcl
       tldr
       todoist-electron
       unzip
+      v4l-utils
       via
+      vivaldi
       zip
-      mullvad-vpn
 
       # Browsers
       firefox
       google-chrome
-      ungoogled-chromium
 
       # Desktop
       clipman
@@ -114,33 +124,8 @@
       gtk.enable = true;
     };
 
-    systemd.user.services.sunset = {
-      Unit = {
-        Description = "Set screen temperature based on time of the day.";
-      };
-      Install = {
-        WantedBy = [ "default.target" ];
-      };
-      Service = {
-        ExecStart = "${pkgs.writeShellScript "sunset" ''
-          #!/bin/bash
-
-          while true; do
-            HOUR=$(date +%H)
-
-            if [[ $HOUR -ge "07" && $HOUR -le "18" ]]; then
-              ${pkgs.hyprsunset} -t 6000 > /dev/null 2>&1 &
-            else
-              ${pkgs.hyprsunset} -t 2800 > /dev/null 2>&1 &
-            fi
-
-            sleep 3600
-          done;
-        ''}";
-      };
-    };
-
     imports = [
+      ../../user-config/chromium.nix
       ../../user-config/command-not-found.nix
       ../../user-config/dconf.nix
       ../../user-config/desktop-session-scripts.nix
@@ -148,6 +133,7 @@
       ../../user-config/dunst.nix
       ../../user-config/eza.nix
       ../../user-config/fzf.nix
+      ../../user-config/ghostty.nix
       ../../user-config/git.nix
       ../../user-config/gtk.nix
       ../../user-config/hypridle.nix
@@ -158,6 +144,7 @@
       ../../user-config/kitty.nix
       ../../user-config/neovim.nix
       ../../user-config/starship.nix
+      ../../user-config/sundial.nix
       ../../user-config/tmux.nix
       ../../user-config/vim.nix
       ../../user-config/waybar.nix
