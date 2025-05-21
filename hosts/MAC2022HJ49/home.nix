@@ -88,6 +88,7 @@
     ../../user-config/direnv.nix
     ../../user-config/eza.nix
     ../../user-config/fzf.nix
+    ../../user-config/ghostty.nix
     ../../user-config/git.nix
     ../../user-config/neovim.nix
     ../../user-config/starship.nix
