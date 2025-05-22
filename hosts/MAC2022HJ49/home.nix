@@ -30,7 +30,7 @@
     syntaxHighlighting.enable = true;
     autocd = true;
     defaultKeymap = "viins";
-    initExtra = ''
+    initContent = ''
       export PATH="$PATH:$HOME/.local/bin"
       if [[ $(uname -m) == 'arm64' ]]; then
         eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -88,7 +88,6 @@
     ../../user-config/direnv.nix
     ../../user-config/eza.nix
     ../../user-config/fzf.nix
-    ../../user-config/ghostty.nix
     ../../user-config/git.nix
     ../../user-config/neovim.nix
     ../../user-config/starship.nix

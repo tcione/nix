@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  services.nix-daemon.enable = true;
+  nix.enable = false;
   programs.zsh.enable = true;
 
   users.users.lapis = {
@@ -30,6 +30,7 @@
 
   system.stateVersion = 5;
 
+  system.primaryUser = "lapis";
   system.defaults = {
     screencapture = {
       disable-shadow = true;
