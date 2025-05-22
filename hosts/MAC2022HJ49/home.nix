@@ -81,6 +81,9 @@
   programs.mise = {
     enable = true;
     enableZshIntegration = true;
+    settings = {
+      idiomatic_version_enable_tools = ["ruby"];
+    };
   };
 
   imports = [
