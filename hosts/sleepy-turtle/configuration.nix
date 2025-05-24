@@ -24,16 +24,16 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.settings.General.Experimental = true;
 
-  i18n.defaultLocale = "en_US.utf8";
-  i18n.extraLocaleSettings.LC_ADDRESS = "pt_BR.utf8";
-  i18n.extraLocaleSettings.LC_IDENTIFICATION = "pt_BR.utf8";
-  i18n.extraLocaleSettings.LC_MEASUREMENT = "pt_BR.utf8";
-  i18n.extraLocaleSettings.LC_MONETARY = "pt_BR.utf8";
-  i18n.extraLocaleSettings.LC_NAME = "pt_BR.utf8";
-  i18n.extraLocaleSettings.LC_NUMERIC = "pt_BR.utf8";
-  i18n.extraLocaleSettings.LC_PAPER = "pt_BR.utf8";
-  i18n.extraLocaleSettings.LC_TELEPHONE = "pt_BR.utf8";
-  i18n.extraLocaleSettings.LC_TIME = "pt_BR.utf8";
+  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.extraLocaleSettings.LC_ADDRESS = "pt_BR.UTF-8";
+  i18n.extraLocaleSettings.LC_IDENTIFICATION = "pt_BR.UTF-8";
+  i18n.extraLocaleSettings.LC_MEASUREMENT = "pt_BR.UTF-8";
+  i18n.extraLocaleSettings.LC_MONETARY = "pt_BR.UTF-8";
+  i18n.extraLocaleSettings.LC_NAME = "pt_BR.UTF-8";
+  i18n.extraLocaleSettings.LC_NUMERIC = "pt_BR.UTF-8";
+  i18n.extraLocaleSettings.LC_PAPER = "pt_BR.UTF-8";
+  i18n.extraLocaleSettings.LC_TELEPHONE = "pt_BR.UTF-8";
+  i18n.extraLocaleSettings.LC_TIME = "pt_BR.UTF-8";
 
   networking.hostName = "sleepy-turtle";
   networking.networkmanager.enable = true;
