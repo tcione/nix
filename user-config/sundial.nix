@@ -29,14 +29,20 @@
           fi
 
           NEW_TEMPERATURE="6000"
+          NEW_GAMMA="100"
           if [[ "$TIME" > "$SUNSET" ]] || [[ "$TIME" < "$SUNRISE" ]]; then
             NEW_TEMPERATURE="2800"
+            NEW_GAMMA="90"
           fi
 
-          if [[ "$PID" == "nopid" ]] || [[ "$LAST_TEMPERATURE" != "$NEW_TEMPERATURE" ]]; then
-            # pkill -ef "hyprsunset -t" || true
+          if [[ "$PID" == "nopid" ]]; then
+            hyprsunset
+          fi
+
+          if [[ "$LAST_TEMPERATURE" != "$NEW_TEMPERATURE" ]]; then
             echo "$NEW_TEMPERATURE" > "$STATE_PATH"
-            hyprctl keyword exec "hyprsunset -t $NEW_TEMPERATURE"
+            hyprctl hyprsunset temperature "$NEW_TEMPERATURE"
+            hyprctl hyprsunset gamma "$NEW_GAMMA"
           fi
 
           exit 0
