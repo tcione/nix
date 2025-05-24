@@ -41,6 +41,8 @@
       via
       vivaldi
       zip
+      rpi-imager
+      rpiboot
 
       # Browsers
       firefox

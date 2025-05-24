@@ -134,7 +134,7 @@
       "DP-1, 2560x1440@120, auto, 1"
     ];
     workspace = [
-      "1, monitor:DP-1, default: true"
+      "1, monitor:DP-1, default:true"
       "2, monitor:DP-1"
       "3, monitor:DP-1"
       "4, monitor:DP-1"
