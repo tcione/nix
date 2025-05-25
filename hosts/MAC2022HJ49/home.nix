@@ -30,7 +30,7 @@
     syntaxHighlighting.enable = true;
     autocd = true;
     defaultKeymap = "viins";
-    initExtra = ''
+    initContent = ''
       export PATH="$PATH:$HOME/.local/bin"
       if [[ $(uname -m) == 'arm64' ]]; then
         eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -81,6 +81,9 @@
   programs.mise = {
     enable = true;
     enableZshIntegration = true;
+    settings = {
+      idiomatic_version_enable_tools = ["ruby"];
+    };
   };
 
   imports = [

@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  services.nix-daemon.enable = true;
+  nix.enable = false;
   programs.zsh.enable = true;
 
   users.users.lapis = {
@@ -30,6 +30,7 @@
 
   system.stateVersion = 5;
 
+  system.primaryUser = "lapis";
   system.defaults = {
     screencapture = {
       disable-shadow = true;
@@ -47,7 +48,7 @@
       dashboard-in-overlay = true;
       enable-spring-load-actions-on-all-items = true;
       expose-animation-duration = 0.1;
-      expose-group-by-app = false;
+      expose-group-apps = false;
       launchanim = false;
       mineffect = "scale";
       minimize-to-application = true;
