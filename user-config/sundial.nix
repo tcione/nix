@@ -36,7 +36,7 @@
           fi
 
           if [[ "$PID" == "nopid" ]]; then
-            hyprsunset
+            systemctl start --user hyprsunset
           fi
 
           if [[ "$LAST_TEMPERATURE" != "$NEW_TEMPERATURE" ]]; then
@@ -59,6 +59,7 @@
       Timer = {
         Unit = "sundial.service";
         OnCalendar = "*:0/30";
+        OnBootSec = "1m";
       };
       Install.WantedBy = [ "timers.target" ];
     };
