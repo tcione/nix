@@ -7,22 +7,23 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+    aws-sam-cli
+    aws-vault
+    awscli
     bat
     bottom
-    gh
-    ripgrep
-    tldr
-    awscli
-    aws-vault
-    jq
-    yq
-    gettext
-    yarn
-    libyaml
-    gobject-introspection
-    e1s
     bruno
     bruno-cli
+    e1s
+    gettext
+    gh
+    gobject-introspection
+    jq
+    libyaml
+    ripgrep
+    tldr
+    yarn
+    yq
   ];
 
   programs.zsh = {
