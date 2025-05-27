@@ -25,6 +25,7 @@
       "the-unarchiver"
       "todoist"
       "visual-studio-code"
+      "ghostty"
     ];
   };
 

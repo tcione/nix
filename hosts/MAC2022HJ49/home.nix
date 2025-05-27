@@ -86,6 +86,24 @@
     };
   };
 
+  programs.ghostty = {
+    enable = true;
+    enableZshIntegration = true;
+    package = null;
+    settings = {
+      theme = "catppuccin-mocha";
+      font-family = "FiraCode-SemiBold";
+      font-size = 16;
+      font-feature = "+ss01 +ss02 +ss03 +ss04 +ss05 +ss07 +ss08 +zero +onum +calt";
+      window-padding-x = 2;
+      window-padding-y = 2;
+      cursor-style = "block";
+      cursor-text = "#222222";
+      cursor-style-blink = false;
+      window-theme = "ghostty";
+    };
+  };
+
   imports = [
     ../../user-config/command-not-found.nix
     ../../user-config/direnv.nix
