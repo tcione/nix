@@ -21,6 +21,8 @@
     libyaml
     gobject-introspection
     e1s
+    bruno
+    bruno-cli
   ];
 
   programs.zsh = {
