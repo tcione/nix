@@ -7,20 +7,23 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+    aws-sam-cli
+    aws-vault
+    awscli
     bat
     bottom
+    bruno
+    bruno-cli
+    e1s
+    gettext
     gh
+    gobject-introspection
+    jq
+    libyaml
     ripgrep
     tldr
-    awscli
-    aws-vault
-    jq
-    yq
-    gettext
     yarn
-    libyaml
-    gobject-introspection
-    e1s
+    yq
   ];
 
   programs.zsh = {
@@ -82,7 +85,25 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
-      idiomatic_version_enable_tools = ["ruby"];
+      idiomatic_version_file_enable_tools = ["ruby" "node"];
+    };
+  };
+
+  programs.ghostty = {
+    enable = true;
+    enableZshIntegration = true;
+    package = null;
+    settings = {
+      theme = "catppuccin-mocha";
+      font-family = "FiraCode-SemiBold";
+      font-size = 16;
+      font-feature = "+ss01 +ss02 +ss03 +ss04 +ss05 +ss07 +ss08 +zero +onum +calt";
+      window-padding-x = 2;
+      window-padding-y = 2;
+      cursor-style = "block";
+      cursor-text = "#222222";
+      cursor-style-blink = false;
+      window-theme = "ghostty";
     };
   };
 
