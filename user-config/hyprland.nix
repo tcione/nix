@@ -194,9 +194,6 @@
       "center,class:Todoist"
       "workspace special:todoist silent,class:Todoist"
 
-      "float,class:signal"
-      "size 960 960,class:signal"
-      "center,class:signal"
       "workspace special:signal silent,class:signal"
     ];
   };
