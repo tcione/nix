@@ -68,6 +68,7 @@
       pavucontrol
       playerctl
       vimiv-qt
+      viu
 
       # - Notifications
       libnotify
