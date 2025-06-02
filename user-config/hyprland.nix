@@ -189,11 +189,7 @@
       "center,class:^tui(btm|fastfetch)$"
 
       # Special space
-      "float,class:Todoist"
-      "size 960 960,class:Todoist"
-      "center,class:Todoist"
       "workspace special:todoist silent,class:Todoist"
-
       "workspace special:signal silent,class:signal"
     ];
   };
