@@ -13,6 +13,8 @@
     enable = true;
     casks = [
       "appcleaner"
+      "ghostty"
+      "hiddenbar"
       "homebrew/cask-fonts/font-fira-code-nerd-font"
       "imageoptim"
       "numi"
@@ -24,8 +26,8 @@
       "superhuman"
       "the-unarchiver"
       "todoist"
+      "trailer"
       "visual-studio-code"
-      "ghostty"
     ];
   };
 
