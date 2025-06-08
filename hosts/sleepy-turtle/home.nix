@@ -43,6 +43,7 @@
       zip
       rpi-imager
       rpiboot
+      ladybird
 
       # Browsers
       firefox
