@@ -39,7 +39,7 @@
             systemctl start --user hyprsunset
           fi
 
-          if [[ "$LAST_TEMPERATURE" != "$NEW_TEMPERATURE" ]]; then
+          if [[ "$PID" == "nopid" ]] || [[ "$LAST_TEMPERATURE" != "$NEW_TEMPERATURE" ]]; then
             echo "$NEW_TEMPERATURE" > "$STATE_PATH"
             hyprctl hyprsunset temperature "$NEW_TEMPERATURE"
             hyprctl hyprsunset gamma "$NEW_GAMMA"
