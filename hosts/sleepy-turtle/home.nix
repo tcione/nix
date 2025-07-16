@@ -42,7 +42,6 @@
       zip
       rpi-imager
       rpiboot
-      ladybird
       claude-code
 
       # Browsers
