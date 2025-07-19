@@ -50,15 +50,9 @@
       bind -r h select-pane -L
       bind -r l select-pane -R
 
-      bind-key -r H run-shell "~/.local/bin/tmux-init"
       unbind C
       bind-key -r C run-shell "tmux neww ~/.local/bin/tmux-sessionizer.sh"
     '';
-  };
-
-  home.file."./.local/bin/tmux-init.sh" = {
-    executable = true;
-    source = ./files/tmux-init.sh;
   };
 
   home.file."./.local/bin/tmux-sessionizer.sh" = {
