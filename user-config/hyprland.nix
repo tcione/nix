@@ -44,6 +44,8 @@
       "signal-desktop"
     ];
     env = [
+      "XKB_DEFAULT_LAYOUT,us"
+      "XKB_DEFAULT_VARIANT,mac"
       "SDL_VIDEODRIVER,wayland"
       "MOZ_ENABLE_WAYLAND,1"
       "XDG_CURRENT_DESKTOP,Hyprland"
