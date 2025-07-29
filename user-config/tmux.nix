@@ -36,6 +36,7 @@
       set-option -g allow-rename off
       set -g default-shell $SHELL
       set -g default-terminal "xterm-256color"
+      set -g default-command "$SHELL -l"
       set-option -ga terminal-overrides ",xterm-256color:Tc"
       bind-key c new-window -c '#{pane_current_path}'
       bind | split-window -h -c '#{pane_current_path}'
