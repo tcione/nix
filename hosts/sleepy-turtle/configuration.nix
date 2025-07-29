@@ -52,7 +52,7 @@
   programs.hyprland.enable = true;
   programs.light.enable = true;
   programs.seahorse.enable = true;
-  programs.ssh.startAgent = true;
+  # programs.ssh.startAgent = true;
   programs.steam.enable = true;
   programs.steam.remotePlay.openFirewall = true;
   programs.steam.dedicatedServer.openFirewall = true;
@@ -85,6 +85,11 @@
   services.printing.enable = true;
   services.upower.enable = true;
 
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "mac";
+  };
+
   # First installed version, used to manage state. DO NOT CHANGE UNLESS THERE'S A GOOD REASON TO
   system.stateVersion = "23.11"; # Did you read the comment?
 
@@ -94,8 +99,13 @@
 
   users.defaultUserShell = pkgs.zsh;
   users.users.tortoise.isNormalUser = true;
-  users.users.tortoise.extraGroups = [ "networkmanager" "wheel" "video" "audio"];
+  users.users.tortoise.extraGroups = [ "networkmanager" "wheel" "video" "audio" "docker"];
   users.users.tortoise.shell = pkgs.zsh;
+
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
 
   xdg.portal.config.common.default = "*";
   xdg.portal.enable = true;

@@ -15,6 +15,9 @@
       cursor-text = "#222222";
       cursor-style-blink = false;
       window-theme = "ghostty";
+      keybind = [
+        "shift+enter=text:\x1b\r"
+      ];
     };
   };
 }

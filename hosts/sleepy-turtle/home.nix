@@ -11,7 +11,6 @@
       bat
       bottom
       brightnessctl
-      deno
       fastfetch
       fd
       filezilla
@@ -43,7 +42,7 @@
       zip
       rpi-imager
       rpiboot
-      ladybird
+      claude-code
 
       # Browsers
       firefox
