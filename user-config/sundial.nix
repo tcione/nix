@@ -32,7 +32,7 @@
           NEW_GAMMA="100"
           if [[ "$TIME" > "$SUNSET" ]] || [[ "$TIME" < "$SUNRISE" ]]; then
             NEW_TEMPERATURE="2800"
-            NEW_GAMMA="90"
+            NEW_GAMMA="80"
           fi
 
           if [[ "$PID" == "nopid" ]]; then
