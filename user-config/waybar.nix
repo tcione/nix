@@ -12,9 +12,11 @@
         modules-left = [
           "custom/system"
           "hyprland/workspaces"
-          "hyprland/window"
+          # "hyprland/window"
         ];
-        modules-center = [ ];
+        modules-center = [
+          "clock"
+        ];
         modules-right = [
           "tray"
           "idle_inhibitor"
@@ -22,8 +24,6 @@
           "backlight"
           "group/hardware"
           "network"
-          "clock"
-          "custom/power"
         ];
         "group/hardware" = {
           orientation = "horizontal";
@@ -43,11 +43,9 @@
           disable-scroll = true;
           all-outputs = true;
           on-click = "activate";
-          format = "{name}: {icon}";
+          format = "[{name}]";
           format-icons = {
-            urgent = "";
-            active = "";
-            default = "";
+            default = "[ø]";
           };
         };
         backlight = {
@@ -67,10 +65,22 @@
           };
         };
         clock = {
-          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          format = "{:%Y-%m-%d %H:%M}";
+          tooltip-format = "<tt>{calendar}</tt>";
+          format = "{:%H:%M}";
           format-alt = "{:%Y-%m-%d %H:%M:%S}";
-          on-click-right = "firefox --new-window https://calendar.google.com";
+          calendar = {
+            mode = "year";
+              mode-mon-col = 4;
+              weeks-pos = "left";
+              on-scroll = 1;
+              format = {
+                months = "<span color='#cdd6f4'><b>{}</b></span>";
+                days = "<span color='#cdd6f4'><b>{}</b></span>";
+                weeks = "<span color='#89dceb'><b>#{}</b></span>";
+                weekdays = "<span color='#fab387'><b>{}</b></span>";
+                today = "<span color='#f2cdcd'><b><u>{}</u></b></span>";
+              };
+          };
         };
         cpu = {
           format = "{usage}% ";
@@ -97,18 +107,18 @@
           format-icons = ["" "" "" "" ""];
         };
         network = {
-          format-wifi = "{signalStrength}%  ";
+          format-wifi = " ";
           format-ethernet = "";
-          tooltip-format = "{essid} - {ipaddr}/{cidr} @ {ifname} via {gwaddr} ";
+          tooltip-format = "{essid} ({signalStrength}%) - {ipaddr}/{cidr} @ {ifname} via {gwaddr} ";
           format-linked = "{ifname} (No IP) ";
           format-disconnected = "⚠";
           format-alt = "{ifname}: {ipaddr}/{cidr}";
         };
         pulseaudio = {
-          format = "{volume}% {icon} {format_source}";
-          format-bluetooth = "{volume}% {icon}  {format_source}";
-          format-bluetooth-muted = " {icon}  {format_source}";
-          format-muted = " {format_source}";
+          format = "{volume}% {icon}";
+          format-bluetooth = "{volume}% {icon} ";
+          format-bluetooth-muted = " {icon} ";
+          format-muted = " {icon}";
           format-source = "| {volume}% ";
           format-source-muted = "| ";
           format-icons = {
@@ -125,10 +135,6 @@
         "custom/system" = {
           format = "";
           on-click = "kitty --class tuifastfetch --hold fastfetch";
-        };
-        "custom/power" = {
-          format = "";
-          on-click = "sleep 0.1 && ~/.local/bin/power-menu.sh";
         };
         "hyprland/window" = {
           format = "  [{class}] {title}";
