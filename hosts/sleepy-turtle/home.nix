@@ -42,7 +42,9 @@
       zip
       rpi-imager
       rpiboot
+
       claude-code
+      opencode
 
       # Browsers
       firefox
