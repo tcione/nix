@@ -154,13 +154,14 @@
     input.touchpad.scroll_factor = 1;
     input.touchpad.tap-to-click = false;
     input.sensitivity = 0;
-    general.gaps_in = 2;
-    general.gaps_out = 2;
+    general.gaps_in = 4;
+    general.gaps_out = 8;
     general.border_size = 1;
     general."col.active_border" = "rgba(ff89b4aa)";
     general."col.inactive_border" = "rgba(595959aa)";
     general.layout = "dwindle";
     decoration.rounding = 10;
+    decoration.shadow.enabled = false;
     decoration.inactive_opacity = 1.0;
     animations.enabled = "yes";
     animations.bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
