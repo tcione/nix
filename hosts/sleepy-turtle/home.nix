@@ -60,6 +60,7 @@
       slurp
       udiskie
       wl-clipboard
+      walker
 
       # - Media
       evince
@@ -90,35 +91,30 @@
       xfce.xfconf
 
       # - Fonts
-      dejavu_fonts
       fira
       fira-code
       fira-code-symbols
       fira-mono
       font-awesome
-      liberation_ttf
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-emoji
-      roboto-slab
-      ubuntu_font_family
+      atkinson-hyperlegible-next
+      atkinson-hyperlegible-mono
+      nerd-fonts.atkynson-mono
     ];
 
     fonts.fontconfig.enable = true;
     fonts.fontconfig.defaultFonts.monospace = [
       "Fira Code"
-      "DejaVu Sans Mono"
       "Noto Mono"
     ];
     fonts.fontconfig.defaultFonts.sansSerif = [
-      "Fira Sans"
-      "Ubuntu"
-      "DejaVu Sans"
+      "Atkinson Hyperlegible Next"
       "Noto Sans"
+      "Fira Sans"
     ];
     fonts.fontconfig.defaultFonts.serif = [
-      "Roboto Slab"
-      "Liberation Serif"
       "Noto Serif"
     ];
 

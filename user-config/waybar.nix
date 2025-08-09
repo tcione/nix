@@ -118,7 +118,7 @@
           format = "{volume}% {icon}";
           format-bluetooth = "{volume}% {icon} ";
           format-bluetooth-muted = " {icon} ";
-          format-muted = " {icon}";
+          format-muted = "󰝟";
           format-source = "| {volume}% ";
           format-source-muted = "| ";
           format-icons = {
@@ -128,7 +128,7 @@
             phone = "";
             portable = "";
             car = "";
-            default = ["" "" ""];
+            default = ["󰖁" "" "" ""];
           };
           on-click = "pavucontrol";
         };
