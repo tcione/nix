@@ -125,6 +125,14 @@
       gtk.enable = true;
     };
 
+    home.file."./.config/walker/themes/sleepy-turtle.css" = {
+      source = ../../user-config/files/walker/sleepy-turtle.css;
+    };
+
+    home.file."./.config/walker/themes/sleepy-turtle.toml" = {
+      source = ../../user-config/files/walker/sleepy-turtle.toml;
+    };
+
     imports = [
       ../../user-config/command-not-found.nix
       ../../user-config/dconf.nix
@@ -148,7 +156,6 @@
       ../../user-config/tmux.nix
       ../../user-config/vim.nix
       ../../user-config/waybar.nix
-      ../../user-config/wofi.nix
       ../../user-config/yazi.nix
       ../../user-config/zoxide.nix
       ../../user-config/zsh.nix
