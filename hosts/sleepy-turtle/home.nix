@@ -27,7 +27,10 @@
       nodejs_24
       obsidian
       orpie
+      pinta
       ripgrep
+      rpi-imager
+      rpiboot
       screen
       sigil
       signal-desktop
@@ -40,9 +43,8 @@
       via
       vivaldi
       zip
-      rpi-imager
-      rpiboot
 
+      # AI
       claude-code
       opencode
 
@@ -55,12 +57,13 @@
       grim
       hyprpicker
       hyprsunset
+      impala
       kooha
       networkmanagerapplet
       slurp
       udiskie
-      wl-clipboard
       walker
+      wl-clipboard
 
       # - Media
       evince
