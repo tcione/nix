@@ -85,11 +85,11 @@
         cpu = {
           format = "{usage}% ";
           tooltip = false;
-          on-click = "kitty --class tuibtm btm";
+          on-click = "kitty --class tui-centered btm";
         };
         memory = {
           format = "{}% ";
-          on-click = "kitty --class tuibtm btm";
+          on-click = "kitty --class tui-centered btm";
         };
         temperature = {
           thermal-zone = 1;
@@ -113,6 +113,7 @@
           format-linked = "{ifname} (No IP) ";
           format-disconnected = "⚠";
           format-alt = "{ifname}: {ipaddr}/{cidr}";
+          on-click-right = "kitty --class tui-centered --hold impala";
         };
         pulseaudio = {
           format = "{volume}% {icon}";
@@ -134,7 +135,7 @@
         };
         "custom/system" = {
           format = "";
-          on-click = "kitty --class tuifastfetch --hold fastfetch";
+          on-click = "kitty --class tui-centered --hold fastfetch";
         };
         "hyprland/window" = {
           format = "  [{class}] {title}";

@@ -186,9 +186,11 @@
       "move 100%-122 100%-42,title:^(.*?Sharing Indicator)$"
       "size 110 30,title:^(.*?Sharing Indicator)$"
 
-      # Fastfetch data
-      "float,class:^tui(btm|fastfetch)$"
-      "center,class:^tui(btm|fastfetch)$"
+      # System popups
+      "float,class:^tui-centered$"
+      "center,class:^tui-centered$"
+      "float,class:^org\.pulseaudio\.pavucontrol$"
+      "center,class:^org\.pulseaudio\.pavucontrol$"
 
       # Special space
       "workspace special:todoist silent,class:Todoist"
