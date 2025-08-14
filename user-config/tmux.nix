@@ -14,6 +14,8 @@
       sensible
       tmux-fzf
       fzf-tmux-url
+      catppuccin
+      mode-indicator
       {
         plugin = prefix-highlight;
         extraConfig = ''
@@ -30,8 +32,8 @@
     ];
     extraConfig = ''
       set -g status-left-length 32
-      set -g status-right '#{prefix_highlight} | %a %h-%d %H:%M'
-      set -g status-style fg=#A6E3A1,bg=#1E1E2E
+      set -g status-right '#{prefix_highlight} | %a %h-%d %H:%M #{tmux_mode_indicator}'
+      # set -g status-style fg=#A6E3A1,bg=#1E1E2E
 
       set-option -g allow-rename off
       set -g default-shell $SHELL
