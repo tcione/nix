@@ -12,9 +12,11 @@
         modules-left = [
           "custom/system"
           "hyprland/workspaces"
-          "hyprland/window"
+          # "hyprland/window"
         ];
-        modules-center = [ ];
+        modules-center = [
+          "clock"
+        ];
         modules-right = [
           "tray"
           "idle_inhibitor"
@@ -22,8 +24,6 @@
           "backlight"
           "group/hardware"
           "network"
-          "clock"
-          "custom/power"
         ];
         "group/hardware" = {
           orientation = "horizontal";
@@ -43,11 +43,9 @@
           disable-scroll = true;
           all-outputs = true;
           on-click = "activate";
-          format = "{name}: {icon}";
+          format = "[{name}]";
           format-icons = {
-            urgent = "";
-            active = "";
-            default = "";
+            default = "[ø]";
           };
         };
         backlight = {
@@ -67,19 +65,31 @@
           };
         };
         clock = {
-          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          format = "{:%Y-%m-%d %H:%M}";
+          tooltip-format = "<tt>{calendar}</tt>";
+          format = "{:%A, %H:%M}";
           format-alt = "{:%Y-%m-%d %H:%M:%S}";
-          on-click-right = "firefox --new-window https://calendar.google.com";
+          calendar = {
+            mode = "year";
+              mode-mon-col = 4;
+              weeks-pos = "left";
+              on-scroll = 1;
+              format = {
+                months = "<span color='#cdd6f4'><b>{}</b></span>";
+                days = "<span color='#cdd6f4'><b>{}</b></span>";
+                weeks = "<span color='#89dceb'><b>#{}</b></span>";
+                weekdays = "<span color='#fab387'><b>{}</b></span>";
+                today = "<span color='#f2cdcd'><b><u>{}</u></b></span>";
+              };
+          };
         };
         cpu = {
           format = "{usage}% ";
           tooltip = false;
-          on-click = "kitty --class tuibtm btm";
+          on-click = "kitty --class tui-centered btm";
         };
         memory = {
           format = "{}% ";
-          on-click = "kitty --class tuibtm btm";
+          on-click = "kitty --class tui-centered btm";
         };
         temperature = {
           thermal-zone = 1;
@@ -97,18 +107,19 @@
           format-icons = ["" "" "" "" ""];
         };
         network = {
-          format-wifi = "{signalStrength}%  ";
+          format-wifi = " ";
           format-ethernet = "";
-          tooltip-format = "{essid} - {ipaddr}/{cidr} @ {ifname} via {gwaddr} ";
+          tooltip-format = "{essid} ({signalStrength}%) - {ipaddr}/{cidr} @ {ifname} via {gwaddr} ";
           format-linked = "{ifname} (No IP) ";
           format-disconnected = "⚠";
           format-alt = "{ifname}: {ipaddr}/{cidr}";
+          on-click-right = "kitty --class tui-centered --hold impala";
         };
         pulseaudio = {
-          format = "{volume}% {icon} {format_source}";
-          format-bluetooth = "{volume}% {icon}  {format_source}";
-          format-bluetooth-muted = " {icon}  {format_source}";
-          format-muted = " {format_source}";
+          format = "{volume}% {icon}";
+          format-bluetooth = "{volume}% {icon} ";
+          format-bluetooth-muted = " {icon} ";
+          format-muted = "󰝟";
           format-source = "| {volume}% ";
           format-source-muted = "| ";
           format-icons = {
@@ -118,17 +129,13 @@
             phone = "";
             portable = "";
             car = "";
-            default = ["" "" ""];
+            default = ["󰖁" "" "" ""];
           };
           on-click = "pavucontrol";
         };
         "custom/system" = {
           format = "";
-          on-click = "kitty --class tuifastfetch --hold fastfetch";
-        };
-        "custom/power" = {
-          format = "";
-          on-click = "sleep 0.1 && ~/.local/bin/power-menu.sh";
+          on-click = "kitty --class tui-centered --hold fastfetch";
         };
         "hyprland/window" = {
           format = "  [{class}] {title}";

@@ -85,11 +85,6 @@
   services.printing.enable = true;
   services.upower.enable = true;
 
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "mac";
-  };
-
   # First installed version, used to manage state. DO NOT CHANGE UNLESS THERE'S A GOOD REASON TO
   system.stateVersion = "23.11"; # Did you read the comment?
 

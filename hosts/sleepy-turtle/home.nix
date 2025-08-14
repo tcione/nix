@@ -27,7 +27,10 @@
       nodejs_24
       obsidian
       orpie
+      pinta
       ripgrep
+      rpi-imager
+      rpiboot
       screen
       sigil
       signal-desktop
@@ -40,9 +43,10 @@
       via
       vivaldi
       zip
-      rpi-imager
-      rpiboot
+
+      # AI
       claude-code
+      opencode
 
       # Browsers
       firefox
@@ -53,10 +57,12 @@
       grim
       hyprpicker
       hyprsunset
+      impala
       kooha
       networkmanagerapplet
       slurp
       udiskie
+      walker
       wl-clipboard
 
       # - Media
@@ -88,35 +94,30 @@
       xfce.xfconf
 
       # - Fonts
-      dejavu_fonts
       fira
       fira-code
       fira-code-symbols
       fira-mono
       font-awesome
-      liberation_ttf
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-emoji
-      roboto-slab
-      ubuntu_font_family
+      atkinson-hyperlegible-next
+      atkinson-hyperlegible-mono
+      nerd-fonts.atkynson-mono
     ];
 
     fonts.fontconfig.enable = true;
     fonts.fontconfig.defaultFonts.monospace = [
       "Fira Code"
-      "DejaVu Sans Mono"
       "Noto Mono"
     ];
     fonts.fontconfig.defaultFonts.sansSerif = [
-      "Fira Sans"
-      "Ubuntu"
-      "DejaVu Sans"
+      "Atkinson Hyperlegible Next"
       "Noto Sans"
+      "Fira Sans"
     ];
     fonts.fontconfig.defaultFonts.serif = [
-      "Roboto Slab"
-      "Liberation Serif"
       "Noto Serif"
     ];
 
@@ -127,8 +128,15 @@
       gtk.enable = true;
     };
 
+    home.file."./.config/walker/themes/sleepy-turtle.css" = {
+      source = ../../user-config/files/walker/sleepy-turtle.css;
+    };
+
+    home.file."./.config/walker/themes/sleepy-turtle.toml" = {
+      source = ../../user-config/files/walker/sleepy-turtle.toml;
+    };
+
     imports = [
-      ../../user-config/chromium.nix
       ../../user-config/command-not-found.nix
       ../../user-config/dconf.nix
       ../../user-config/desktop-session-scripts.nix
@@ -151,7 +159,6 @@
       ../../user-config/tmux.nix
       ../../user-config/vim.nix
       ../../user-config/waybar.nix
-      ../../user-config/wofi.nix
       ../../user-config/yazi.nix
       ../../user-config/zoxide.nix
       ../../user-config/zsh.nix

@@ -66,8 +66,7 @@
       "$mod, Space, togglefloating,"
       "$mod, M, fullscreen, 1"
       "$mod, F, fullscreen, 0"
-      "$mod, D, exec, wofi"
-      "$mod SHIFT, D, exec, wofi --show run"
+      "$mod, D, exec, walker"
       "$mod, T, togglesplit, # dwindle"
       "$mod, V, exec, clipman pick -t wofi"
       "$mod, C, exec, hyprpicker --autocopy --format=hex"
@@ -154,13 +153,14 @@
     input.touchpad.scroll_factor = 1;
     input.touchpad.tap-to-click = false;
     input.sensitivity = 0;
-    general.gaps_in = 2;
-    general.gaps_out = 2;
+    general.gaps_in = 4;
+    general.gaps_out = 8;
     general.border_size = 1;
     general."col.active_border" = "rgba(ff89b4aa)";
     general."col.inactive_border" = "rgba(595959aa)";
     general.layout = "dwindle";
     decoration.rounding = 10;
+    decoration.shadow.enabled = false;
     decoration.inactive_opacity = 1.0;
     animations.enabled = "yes";
     animations.bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
@@ -186,9 +186,11 @@
       "move 100%-122 100%-42,title:^(.*?Sharing Indicator)$"
       "size 110 30,title:^(.*?Sharing Indicator)$"
 
-      # Fastfetch data
-      "float,class:^tui(btm|fastfetch)$"
-      "center,class:^tui(btm|fastfetch)$"
+      # System popups
+      "float,class:^tui-centered$"
+      "center,class:^tui-centered$"
+      "float,class:^org\.pulseaudio\.pavucontrol$"
+      "center,class:^org\.pulseaudio\.pavucontrol$"
 
       # Special space
       "workspace special:todoist silent,class:Todoist"
