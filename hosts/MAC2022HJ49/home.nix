@@ -106,6 +106,13 @@
       window-theme = "ghostty";
       keybind = [
         "shift+enter=text:\n"
+        "ctrl+shift+|=new_split:right"
+        "ctrl+shift+_=new_split:down"
+        "ctrl+shift+h=goto_split:left"
+        "ctrl+shift+j=goto_split:down"
+        "ctrl+shift+k=goto_split:up"
+        "ctrl+shift+l=goto_split:right"
+        "ctrl+shift+m=toggle_split_zoom"
       ];
     };
   };
