@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
-
 {
   programs.ghostty = {
     enable = true;
     enableZshIntegration = true;
+    package = if pkgs.stdenv.isDarwin then null else pkgs.ghostty;
     settings = {
       theme = "catppuccin-mocha";
       font-family = "Fira Code Medium";

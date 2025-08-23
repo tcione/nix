@@ -89,39 +89,12 @@
     };
   };
 
-  programs.ghostty = {
-    enable = true;
-    enableZshIntegration = true;
-    package = null;
-    settings = {
-      theme = "catppuccin-mocha";
-      font-family = "FiraCode-SemiBold";
-      font-size = 16;
-      font-feature = "+ss01 +ss02 +ss03 +ss04 +ss05 +ss07 +ss08 +zero +onum +calt";
-      window-padding-x = 2;
-      window-padding-y = 2;
-      cursor-style = "block";
-      cursor-text = "#222222";
-      cursor-style-blink = false;
-      window-theme = "ghostty";
-      keybind = [
-        "shift+enter=text:\n"
-        "ctrl+shift+|=new_split:right"
-        "ctrl+shift+_=new_split:down"
-        "ctrl+shift+h=goto_split:left"
-        "ctrl+shift+j=goto_split:down"
-        "ctrl+shift+k=goto_split:up"
-        "ctrl+shift+l=goto_split:right"
-        "ctrl+shift+m=toggle_split_zoom"
-      ];
-    };
-  };
-
   imports = [
     ../../user-config/command-not-found.nix
     ../../user-config/direnv.nix
     ../../user-config/eza.nix
     ../../user-config/fzf.nix
+    ../../user-config/ghostty.nix
     ../../user-config/git.nix
     ../../user-config/neovim.nix
     ../../user-config/starship.nix
