@@ -26,24 +26,6 @@
     yq
   ];
 
-  programs.zsh = {
-    enable = true;
-    autosuggestion.enable = true;
-    enableCompletion = true;
-    syntaxHighlighting.enable = true;
-    autocd = true;
-    defaultKeymap = "viins";
-    initContent = ''
-      export PATH="$PATH:$HOME/.local/bin"
-      if [[ $(uname -m) == 'arm64' ]]; then
-        eval "$(/opt/homebrew/bin/brew shellenv)"
-      fi
-    '';
-    profileExtra = ''
-      export EDITOR='vim'
-    '';
-  };
-
   programs.kitty = {
     enable = true;
     themeFile = "Catppuccin-Mocha";
@@ -101,5 +83,6 @@
     ../../user-config/tmux.nix
     ../../user-config/vim.nix
     ../../user-config/zoxide.nix
+    ../../user-config/zsh.nix
   ];
 }
