@@ -11,6 +11,10 @@
       url = "github:lnl7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sundial = {
+      url = "github:tcione/sundial";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, darwin, ...}@inputs:
@@ -42,7 +46,10 @@
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.tortoise.imports = [ ./hosts/sleepy-turtle/home.nix ];
+          home-manager.users.tortoise.imports = [
+            inputs.sundial.homeManagerModules.${system}.default
+            ./hosts/sleepy-turtle/home.nix
+          ];
         }
       ];
     };
