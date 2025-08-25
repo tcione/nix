@@ -7,7 +7,7 @@
     font = {
       package = pkgs.fira-code-symbols;
       name = "Fira Code Medium";
-      size = 12;
+      size = if pkgs.stdenv.isDarwin then 16 else 12;
     };
     keybindings = {
       "ctrl+." = "next_tab";
