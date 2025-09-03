@@ -71,6 +71,10 @@
   nnoremap ; <cmd>Telescope buffers<cr>
   nnoremap <leader>fg <cmd>Telescope live_grep<cr>
   nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+  nnoremap <leader>fd <cmd>Telescope diagnostics<cr>
+  nnoremap <leader>td <cmd>lua require("trouble").open('diagnostics')<cr>
+  nnoremap <leader>tb <cmd>lua require("trouble").open('diagnostics_buffer')<cr>
+  nnoremap <leader>ti <cmd>lua vim.diagnostic.enable(not vim.diagnostic.is_enabled())<cr>
 
   " =========================================
   " Initialization commands
