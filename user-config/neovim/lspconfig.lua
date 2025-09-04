@@ -1,5 +1,13 @@
 local nvim_lsp = require('lspconfig')
 
+-- Global LSP debounce
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    update_in_insert = false,
+    debounce_text_changes = 300,
+  }
+)
+
 local on_lsp_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -81,7 +89,7 @@ nvim_lsp.ltex.setup({
     "plaintext"
   },
   flags = {
-    debounce_text_changes = 300
+    debounce_text_changes = 3000
   },
   settings = {
     ltex = {
