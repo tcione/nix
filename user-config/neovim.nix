@@ -35,6 +35,7 @@
           })
         '';
       }
+      fzf-lua
 
       # Telescope
       plenary-nvim
@@ -167,6 +168,13 @@
       BufOnly-vim
       PreserveNoEOL
       ferret
+      nui-nvim
+      nvim-notify
+      {
+        plugin = noice-nvim;
+        type = "lua";
+        config = builtins.readFile(./neovim/noice-nvim.lua);
+      }
     ];
     extraConfig = builtins.readFile(./neovim/baseline.vim);
     extraLuaConfig = ''

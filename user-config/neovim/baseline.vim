@@ -75,6 +75,7 @@
   nnoremap <leader>td <cmd>lua require("trouble").open('diagnostics')<cr>
   nnoremap <leader>tb <cmd>lua require("trouble").open('diagnostics_buffer')<cr>
   nnoremap <leader>ti <cmd>lua vim.diagnostic.enable(not vim.diagnostic.is_enabled())<cr>
+  nnoremap <leader>nd <cmd>lua require("noice").cmd("dismiss")<cr>
 
   " =========================================
   " Initialization commands
