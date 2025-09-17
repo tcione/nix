@@ -105,12 +105,12 @@
       "ALT, XF86AudioRaiseVolume , exec , pamixer -i 1 && notify-send -h int:value:$(pamixer --get-volume) \"  Volume\""
       "ALT, XF86AudioLowerVolume , exec , pamixer -d 1 && notify-send -h int:value:$(pamixer --get-volume) \"  Volume\""
       ", XF86AudioMute , exec , ~/.local/bin/hyprland-mute.sh"
-      "SHIFT, XF86AudioRaiseVolume , exec , dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
-      "SHIFT, XF86AudioLowerVolume , exec , dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
-      "SHIFT, XF86AudioMute , exec , dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
-      ", XF86AudioPlay , exec , dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
-      ", XF86AudioNext , exec , dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
-      ", XF86AudioPrev , exec , dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+      "SHIFT, XF86AudioRaiseVolume , exec , playerctl next"
+      "SHIFT, XF86AudioLowerVolume , exec , playerctl previous"
+      "SHIFT, XF86AudioMute , exec , playerctl play-pause"
+      ", XF86AudioPlay , exec , playerctl play-pause"
+      ", XF86AudioNext , exec , playerctl next"
+      ", XF86AudioPrev , exec , playerctl previous"
     ]
     ++ (
       builtins.concatLists(builtins.genList(

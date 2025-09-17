@@ -43,6 +43,7 @@
       via
       vivaldi
       zip
+      tidal-hifi
 
       # AI
       claude-code
