@@ -15,6 +15,10 @@
       url = "github:tcione/sundial";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    forest = {
+      url = "path:/home/tortoise/Projects/src/forest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, darwin, ...}@inputs:
@@ -42,12 +46,22 @@
     nixosConfigurations.sleepy-turtle = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
+        {
+          nixpkgs.overlays = [
+            (
+              final: prev: {
+               forest = inputs.forest.packages.${system}.default;
+             }
+            )
+          ];
+        }
         ./hosts/sleepy-turtle/configuration.nix
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.tortoise.imports = [
             inputs.sundial.homeManagerModules.${system}.default
+            inputs.forest.homeManagerModules.${system}.default
             ./hosts/sleepy-turtle/home.nix
           ];
         }

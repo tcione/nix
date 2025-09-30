@@ -137,6 +137,18 @@
       source = ../../user-config/files/walker/sleepy-turtle.toml;
     };
 
+
+    programs.forest = {
+      enable = true;
+      settings = {
+        general = {
+          baseDir = "${config.home.homeDirectory}/Projects";
+          copy = [".env" ".envrc"];
+          exec = [];
+        };
+      };
+    };
+
     imports = [
       ../../user-config/command-not-found.nix
       ../../user-config/dconf.nix
