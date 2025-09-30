@@ -174,7 +174,6 @@
     ];
     dwindle.pseudotile = "yes";
     dwindle.preserve_split = "yes";
-    gestures.workspace_swipe = "off";
     windowrulev2 = [
       "workspace 6 silent,title:^.*Spotify.*$"
 

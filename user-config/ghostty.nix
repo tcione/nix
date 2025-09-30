@@ -5,7 +5,7 @@
     enableZshIntegration = true;
     package = if pkgs.stdenv.isDarwin then null else pkgs.ghostty;
     settings = {
-      theme = "catppuccin-mocha";
+      theme = "Catppuccin Mocha";
       font-family = "Fira Code Medium";
       font-size = if pkgs.stdenv.isDarwin then 16 else 12;
       font-feature = "+ss01 +ss02 +ss03 +ss04 +ss05 +ss07 +ss08 +zero +onum +calt";
