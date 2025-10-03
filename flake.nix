@@ -16,7 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     forest = {
-      url = "path:/home/tortoise/Projects/src/forest";
+      url = "github:tcione/forest";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
