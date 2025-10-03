@@ -65,11 +65,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1759520563,
-        "narHash": "sha256-si+roY/wnZNjtbA0zYZjLW1TPODEEjSxY8FcrBIOStw=",
+        "lastModified": 1759521905,
+        "narHash": "sha256-Xnlj28rYzxfm92BI43v7lbJN5O30S2oDde1PQ+qsfyc=",
         "owner": "tcione",
         "repo": "forest",
-        "rev": "d4fe334b167ecdd9202cb186a12d2f77b9fc6547",
+        "rev": "763e462bea9fc5a9b9c2cd1adf8bbe4a21751fcf",
         "type": "github"
       },
       "original": {
