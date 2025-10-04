@@ -24,6 +24,7 @@
       lm_sensors
       mullvad-vpn
       neovide
+      nh
       nodejs_24
       obsidian
       orpie
@@ -36,6 +37,7 @@
       signal-desktop
       spotify
       tcl
+      tidal-hifi
       tldr
       todoist-electron
       unzip
@@ -43,7 +45,6 @@
       via
       vivaldi
       zip
-      tidal-hifi
 
       # AI
       claude-code
