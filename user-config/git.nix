@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   programs.git = {
     enable = true;
-    userName = "Tales Cione";
-    userEmail = "talesj@gmail.com";
+    userName = lib.mkDefault "placeholder";
+    userEmail = lib.mkDefault "placeholder@example.com";
     aliases = {
       l = "log --pretty=oneline -n 20 --graph --abbrev-commit";
       tree = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
@@ -37,15 +37,12 @@
     extraConfig = {
       init.defaultBranch = "main";
       pull.rebase = false;
+      include.path = config.sops.secrets."git-config".path;
     };
     includes = [
       {
         condition = "gitdir:~/Projects/heyjobs/";
-        contents = {
-          user = {
-            email = "tales.cione@heyjobs.de";
-          };
-        };
+        path = config.sops.secrets."git-heyjobs-config".path;
       }
     ];
   };

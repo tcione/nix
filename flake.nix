@@ -11,6 +11,10 @@
       url = "github:lnl7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     sundial = {
       url = "github:tcione/sundial";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -35,6 +39,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.lapis = {
               imports = [
+                inputs.sops-nix.homeManagerModules.sops
                 ./hosts/MAC2022HJ49/home.nix
               ];
             };
@@ -60,6 +65,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.tortoise.imports = [
+            inputs.sops-nix.homeManagerModules.sops
             inputs.sundial.homeManagerModules.${system}.default
             inputs.forest.homeManagerModules.${system}.default
             ./hosts/sleepy-turtle/home.nix
