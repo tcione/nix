@@ -20,6 +20,7 @@
     gobject-introspection
     jq
     libyaml
+    nh
     ripgrep
     sops
     tldr
