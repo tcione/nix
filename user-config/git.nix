@@ -3,8 +3,6 @@
 {
   programs.git = {
     enable = true;
-    userName = lib.mkDefault "placeholder";
-    userEmail = lib.mkDefault "placeholder@example.com";
     aliases = {
       aa = "add --all";
       discard = "!f() { git reset --hard && git clean -xfd}; f";
