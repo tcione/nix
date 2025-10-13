@@ -1,0 +1,8 @@
+keys:
+  - &tortoise age1pfmhf5w07eukrm7dkzq8224jxc6k29cdpalvtsc5ggqwu0lyxc0skhtwkx
+
+creation_rules:
+  - path_regex: secrets/.*
+    key_groups:
+      - age:
+          - *tortoise

@@ -1,21 +1,21 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   programs.git = {
     enable = true;
-    userName = "Tales Cione";
-    userEmail = "talesj@gmail.com";
+    userName = lib.mkDefault "placeholder";
+    userEmail = lib.mkDefault "placeholder@example.com";
     aliases = {
-      l = "log --pretty=oneline -n 20 --graph --abbrev-commit";
-      tree = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
-      s = "status -s";
-      tags = "tag -l";
-      rn = "!r() { git rebase -i HEAD~$1; }; r";
       aa = "add --all";
-      undo = "reset --hard HEAD";
-      unstage = "!f() { git reset --soft HEAD~1; git reset HEAD; }; f";
-      pushoc = "!f() { git push origin $(git rev-parse --abbrev-ref HEAD); }; f";
-      pulloc = "!f() { git pull origin $(git rev-parse --abbrev-ref HEAD); }; f";
+      discard = "!f() { git reset --hard && git clean -xfd}; f";
+      l = "log --pretty=oneline -n 20 --graph --abbrev-commit";
+      l-tree = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
+      patch = "!f() { git add --all; git commit --amend --no-edit; }; f";
+      pull-current = "!f() { git pull origin $(git rev-parse --abbrev-ref HEAD); }; f";
+      push-force = "push --force-with-lease";
+      s = "status -s";
+      uncommit = "!f() { git reset --soft HEAD~1; git reset HEAD; }; f";
+      undo = "!f() { git uncommit; git discard; }; f";
     };
     delta.enable = true;
     ignores = [
@@ -33,19 +33,33 @@
       "__gitignore_*"
       "__todo.txt"
       "vim/.netrwhist"
+      "noice.log"
     ];
     extraConfig = {
+      branch.sort = "-committerdate";
+      column.ui = "auto";
+      commit.verbose = true;
+      fetch.all = true;
+      fetch.prune = true;
+      fetch.pruneTags = true;
       init.defaultBranch = "main";
-      pull.rebase = false;
+      merge.conflictstyle = "zdiff3";
+      merge.tool = "nvimdiff";
+      mergetool.keepBackup = false;
+      mergetool.nvimdiff.layout = "LOCAL,BASE,REMOTE / MERGED";
+      mergetool.prompt = false;
+      pull.rebase = true;
+      push.autoSetupRemote = true;
+      rebase.autoSquash = true;
+      rebase.autoStash = true;
+      rebase.updateRefs = true;
+
+      include.path = config.sops.secrets."git-config".path;
     };
     includes = [
       {
         condition = "gitdir:~/Projects/heyjobs/";
-        contents = {
-          user = {
-            email = "tales.cione@heyjobs.de";
-          };
-        };
+        path = config.sops.secrets."git-heyjobs-config".path;
       }
     ];
   };
