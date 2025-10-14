@@ -49,7 +49,6 @@
 
       # AI
       claude-code
-      opencode
 
       # Browsers
       firefox
