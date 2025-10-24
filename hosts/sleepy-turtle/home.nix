@@ -30,21 +30,18 @@
       orpie
       pinta
       ripgrep
-      rpi-imager
-      rpiboot
+      # rpi-imager
+      # rpiboot
       screen
-      sigil
+      # sigil
       signal-desktop
       sops
-      spotify
       tcl
       tidal-hifi
       tldr
       todoist-electron
       unzip
       v4l-utils
-      via
-      vivaldi
       zip
 
       # AI
@@ -53,6 +50,7 @@
       # Browsers
       firefox
       google-chrome
+      floorp-bin
 
       # Desktop
       clipman
