@@ -1,5 +1,3 @@
-local nvim_lsp = require('lspconfig')
-
 -- Global LSP debounce
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -16,7 +14,7 @@ local on_lsp_attach = function(client, bufnr)
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
-  local opts = { noremap=true, silent=true }
+  local opts = { noremap = true, silent = true }
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -27,61 +25,47 @@ local on_lsp_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>ld', '<cmd>lua vim.diagnostic.open_float(0, {scope="line"})<CR>', opts)
 end
 
--- Enable LSP servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-nvim_lsp.solargraph.setup({
-  cmd = { "solargraph", "stdio" },
-  on_attach = on_lsp_attach,
-  capabilities = capabilities,
-})
-nvim_lsp.ts_ls.setup({
-  on_attach = on_lsp_attach,
-  capabilities = capabilities,
-})
-nvim_lsp.rust_analyzer.setup({
-  on_attach = on_lsp_attach,
-  capabilities = capabilities,
-})
-nvim_lsp.bashls.setup({
-  on_attach = on_lsp_attach,
-  capabilities = capabilities,
-})
-nvim_lsp.clangd.setup({
-  on_attach = on_lsp_attach,
-  capabilities = capabilities,
-})
-nvim_lsp.svelte.setup({
-  on_attach = on_lsp_attach,
-  capabilities = capabilities,
-})
-nvim_lsp.gopls.setup({
-  on_attach = on_lsp_attach,
-  capabilities = capabilities,
-})
-nvim_lsp.html.setup({
-  on_attach = on_lsp_attach,
-  capabilities = capabilities,
-})
-nvim_lsp.lua_ls.setup({
+vim.lsp.config('ruby_lsp', { on_attach = on_lsp_attach, capabilities = capabilities, })
+vim.lsp.enable('ruby_lsp')
+
+vim.lsp.config('rubocop', { on_attach = on_lsp_attach, capabilities = capabilities, })
+vim.lsp.enable('rubocop')
+
+vim.lsp.config('ts_ls', { on_attach = on_lsp_attach, capabilities = capabilities, })
+vim.lsp.enable('ts_ls')
+
+vim.lsp.config('rust_analyzer', { on_attach = on_lsp_attach, capabilities = capabilities, })
+vim.lsp.enable('rust_analyzer')
+
+vim.lsp.config('bashls', { on_attach = on_lsp_attach, capabilities = capabilities, })
+vim.lsp.enable('bashls')
+
+vim.lsp.config('html', { on_attach = on_lsp_attach, capabilities = capabilities, })
+vim.lsp.enable('html')
+
+vim.lsp.config('lua_ls', {
   on_attach = on_lsp_attach,
   capabilities = capabilities,
   settings = {
     Lua = {
-      diagnostics ={
-          globals = { "vim", "love" }
+      diagnostics = {
+        globals = { "vim" },
       }
     }
   }
 })
-nvim_lsp.zls.setup({
+vim.lsp.enable('lua_ls')
+
+vim.lsp.config('nil_ls', { on_attach = on_lsp_attach, capabilities = capabilities, })
+vim.lsp.enable('nil_ls')
+
+vim.lsp.config('ltex', {
   on_attach = on_lsp_attach,
   capabilities = capabilities,
-})
-nvim_lsp.ltex.setup({
-  on_attach = on_lsp_attach,
   filetypes = {
     "markdown",
     "text",
@@ -93,7 +77,8 @@ nvim_lsp.ltex.setup({
   },
   settings = {
     ltex = {
-        language = "en-US"
+      language = "en-US"
     }
   }
 })
+vim.lsp.enable('ltex')

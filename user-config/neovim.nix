@@ -12,17 +12,13 @@
       nodePackages.typescript
       nodePackages.typescript-language-server
       nodePackages.yaml-language-server
-      rubyPackages.solargraph
+      ruby-lsp
+      rubocop
       shellcheck
       rust-analyzer
       nil
-      gnumake
-      clang-tools
-      gopls
-      nodePackages_latest.vscode-langservers-extracted
       ltex-ls
       lua-language-server
-      zls
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -171,9 +167,9 @@
       nui-nvim
       nvim-notify
       {
-        plugin = noice-nvim;
+        plugin = fidget-nvim;
         type = "lua";
-        config = builtins.readFile(./neovim/noice-nvim.lua);
+        config = builtins.readFile(./neovim/fidget-nvim.lua);
       }
     ];
     extraConfig = builtins.readFile(./neovim/baseline.vim);
