@@ -1,21 +1,11 @@
 { config, pkgs, lib, ... }:
 
 {
+  programs.delta.enable = true;
+  programs.delta.enableGitIntegration = true;
+
   programs.git = {
     enable = true;
-    aliases = {
-      aa = "add --all";
-      discard = "!f() { git reset --hard && git clean -xfd}; f";
-      l = "log --pretty=oneline -n 20 --graph --abbrev-commit";
-      l-tree = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
-      patch = "!f() { git add --all; git commit --amend --no-edit; }; f";
-      pull-current = "!f() { git pull origin $(git rev-parse --abbrev-ref HEAD); }; f";
-      push-force = "push --force-with-lease";
-      s = "status -s";
-      uncommit = "!f() { git reset --soft HEAD~1; git reset HEAD; }; f";
-      undo = "!f() { git uncommit; git discard; }; f";
-    };
-    delta.enable = true;
     ignores = [
       "*.pyc"
       ".DS_Store"
@@ -33,7 +23,19 @@
       "vim/.netrwhist"
       "noice.log"
     ];
-    extraConfig = {
+    settings = {
+      alias = {
+        aa = "add --all";
+        discard = "!f() { git reset --hard && git clean -xfd}; f";
+        l = "log --pretty=oneline -n 20 --graph --abbrev-commit";
+        l-tree = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
+        patch = "!f() { git add --all; git commit --amend --no-edit; }; f";
+        pull-current = "!f() { git pull origin $(git rev-parse --abbrev-ref HEAD); }; f";
+        push-force = "push --force-with-lease";
+        s = "status -s";
+        uncommit = "!f() { git reset --soft HEAD~1; git reset HEAD; }; f";
+        undo = "!f() { git uncommit; git discard; }; f";
+      };
       branch.sort = "-committerdate";
       column.ui = "auto";
       commit.verbose = true;
