@@ -7,7 +7,6 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
-    aws-sam-cli
     aws-vault
     awscli
     bat
