@@ -54,6 +54,7 @@
   set shada^=%
   set completeopt=menu,menuone,noselect
   set laststatus=3
+  set noacd
 
   " =========================================
   " Mappings
