@@ -169,6 +169,7 @@
   };
 
   imports = [
+    ../../user-config/chromium.nix
     ../../user-config/command-not-found.nix
     ../../user-config/dconf.nix
     ../../user-config/desktop-session-scripts.nix
