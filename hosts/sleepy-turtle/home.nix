@@ -37,6 +37,7 @@
     obsidian
     orpie
     pinta
+    rawtherapee
     ripgrep
     screen
     signal-desktop
@@ -87,15 +88,8 @@
     adwaita-icon-theme
     catppuccin-cursors
     catppuccin-gtk
+    catppuccin-kde
     glib
-
-    # - File manager
-    xfce.thunar
-    xfce.thunar-archive-plugin
-    xfce.thunar-media-tags-plugin
-    xfce.thunar-volman
-    xfce.tumbler
-    xfce.xfconf
 
     # - Fonts
     atkinson-hyperlegible-mono

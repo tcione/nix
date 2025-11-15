@@ -13,11 +13,12 @@
   environment.etc."polkit-gnome-authentication-agent-1".source = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
   environment.shells = [ pkgs.zsh ];
   environment.systemPackages = with pkgs; [
-    vim
-    wget
     curl
     git
+    kdePackages.ark
     polkit_gnome
+    vim
+    wget
   ];
   environment.variables.EDITOR = "vim";
 
@@ -58,6 +59,15 @@
   programs.steam.dedicatedServer.openFirewall = true;
   programs.steam.localNetworkGameTransfers.openFirewall = true;
   programs.zsh.enable = true;
+
+  programs.thunar.enable = true;
+  programs.thunar.plugins = with pkgs; [
+    xfce.thunar-archive-plugin
+    xfce.thunar-media-tags-plugin
+    xfce.thunar-volman
+  ];
+  programs.xfconf.enable = true;
+  services.tumbler.enable = true;
 
   security.pam.services.hyprlock = {};
   security.rtkit.enable = true;
