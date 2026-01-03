@@ -14,10 +14,10 @@
   home.packages = with pkgs; [
     # rpi-imager
     # rpiboot
-    # sigil
     appimage-run
     bat
     bottom
+    brave
     brightnessctl
     fastfetch
     fd
@@ -40,10 +40,11 @@
     rawtherapee
     ripgrep
     screen
+    sigil
     signal-desktop
     sops
     tcl
-    tidal-hifi
+    # tidal-hifi
     tldr
     todoist-electron
     unzip

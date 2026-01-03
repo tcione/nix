@@ -164,9 +164,9 @@
     decoration.shadow.enabled = false;
     decoration.inactive_opacity = 1.0;
     animations.enabled = "yes";
-    animations.bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+    # animations.bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
     animation = [
-      "windows, 1, 7, myBezier"
+      # "windows, 1, 7, myBezier"
       "windowsOut, 1, 7, default, popin 80%"
       "border, 1, 10, default"
       "fade, 1, 7, default"
