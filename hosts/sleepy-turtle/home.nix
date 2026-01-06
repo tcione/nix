@@ -44,7 +44,7 @@
     signal-desktop
     sops
     tcl
-    # tidal-hifi
+    tidal-hifi
     tldr
     todoist-electron
     unzip

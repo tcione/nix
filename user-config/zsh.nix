@@ -33,7 +33,7 @@ in
           export SSH_AUTH_SOCK=~/.1password/agent.sock
           systemctl --user import-environment PATH
 
-          exec Hyprland
+          start-hyprland
         fi
       '';
     } // darwinConfig;
