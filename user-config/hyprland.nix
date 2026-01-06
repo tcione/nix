@@ -174,27 +174,18 @@
     ];
     dwindle.pseudotile = "yes";
     dwindle.preserve_split = "yes";
-    windowrulev2 = [
-      "workspace 6 silent,title:^.*Spotify.*$"
-
-      # Paypal popup window
-      "float,title:^(.*?Log in to your Paypal account)$"
-      "center,title:^(.*?Log in to your Paypal account)$"
-
-      # Google meets indicator
-      "float,title:^(.*?Sharing Indicator)$"
-      "move 100%-122 100%-42,title:^(.*?Sharing Indicator)$"
-      "size 110 30,title:^(.*?Sharing Indicator)$"
+    windowrule = [
+      "workspace 6 silent,match:class tidal-hifi"
 
       # System popups
-      "float,class:^tui-centered$"
-      "center,class:^tui-centered$"
-      "float,class:^org\.pulseaudio\.pavucontrol$"
-      "center,class:^org\.pulseaudio\.pavucontrol$"
+      "float on,match:class ^tui-centered$"
+      "center on,match:class ^tui-centered$"
+      "float on,match:class ^org\.pulseaudio\.pavucontrol$"
+      "center on,match:class ^org\.pulseaudio\.pavucontrol$"
 
       # Special space
-      "workspace special:todoist silent,class:Todoist"
-      "workspace special:signal silent,class:signal"
+      "workspace special:todoist silent,match:class Todoist"
+      "workspace special:signal silent,match:class signal"
     ];
   };
 }
