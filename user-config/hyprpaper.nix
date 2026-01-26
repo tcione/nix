@@ -3,7 +3,6 @@
 {
   services.hyprpaper.enable = true;
   services.hyprpaper.settings.splash = false;
-  services.hyprpaper.settings.splash_offset = 2.0;
   services.hyprpaper.settings.ipc = true;
   services.hyprpaper.settings.wallpaper = [
     {

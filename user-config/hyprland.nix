@@ -134,6 +134,7 @@
       # "eDP-1, highres, auto, 2"
       "eDP-1, 2880x1920@60, auto, 2"
       "DP-1, 2560x1440@120, auto, 1"
+      "DP-2, 2560x1440@120, auto, 1"
     ];
     workspace = [
       "1, monitor:DP-1, default:true"

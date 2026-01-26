@@ -22,15 +22,8 @@
     ];
 
     plugins = with pkgs.vimPlugins; [
-      {
-        plugin = nvim-treesitter.withAllGrammars;
-        type = "lua";
-        config = ''
-          require'nvim-treesitter.configs'.setup({
-            highlight = { enable = true }
-          })
-        '';
-      }
+      nvim-treesitter
+
       fzf-lua
 
       # Telescope

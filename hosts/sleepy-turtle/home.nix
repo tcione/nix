@@ -50,6 +50,7 @@
     unzip
     v4l-utils
     zip
+    zola
 
     # AI
     claude-code
