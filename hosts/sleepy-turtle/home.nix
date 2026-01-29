@@ -69,7 +69,6 @@
     networkmanagerapplet
     slurp
     udiskie
-    walker
     wl-clipboard
 
     # - Media
@@ -128,13 +127,13 @@
     gtk.enable = true;
   };
 
-  home.file."./.config/walker/themes/sleepy-turtle.css" = {
-    source = ../../user-config/files/walker/sleepy-turtle.css;
-  };
+  # home.file."./.config/walker/themes/sleepy-turtle.css" = {
+    # source = ../../user-config/files/walker/sleepy-turtle.css;
+  # };
 
-  home.file."./.config/walker/themes/sleepy-turtle.toml" = {
-    source = ../../user-config/files/walker/sleepy-turtle.toml;
-  };
+  # home.file."./.config/walker/themes/sleepy-turtle.toml" = {
+    # source = ../../user-config/files/walker/sleepy-turtle.toml;
+  # };
 
   programs.forest = {
     enable = true;
@@ -187,6 +186,7 @@
     ../../user-config/sundial.nix
     ../../user-config/tmux.nix
     ../../user-config/vim.nix
+    ../../user-config/walker.nix
     ../../user-config/waybar.nix
     ../../user-config/yazi.nix
     ../../user-config/zoxide.nix

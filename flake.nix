@@ -23,6 +23,14 @@
       url = "github:tcione/forest";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    elephant = {
+      url = "github:abenz1267/elephant";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    walker = {
+      url = "github:abenz1267/walker";
+      inputs.elephant.follows = "elephant";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, darwin, ...}@inputs:
@@ -65,6 +73,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.tortoise.imports = [
+            inputs.walker.homeManagerModules.default
             inputs.sops-nix.homeManagerModules.sops
             inputs.sundial.homeManagerModules.${system}.default
             inputs.forest.homeManagerModules.${system}.default
