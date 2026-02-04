@@ -52,6 +52,8 @@
     zip
     zola
 
+    libreoffice
+
     # AI
     claude-code
 
