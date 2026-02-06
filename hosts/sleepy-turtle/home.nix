@@ -65,6 +65,7 @@
     clipman
     grim
     hyprpicker
+    hyprshutdown
     hyprsunset
     impala
     kooha

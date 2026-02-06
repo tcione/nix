@@ -111,6 +111,7 @@
       ", XF86AudioPlay , exec , playerctl play-pause"
       ", XF86AudioNext , exec , playerctl next"
       ", XF86AudioPrev , exec , playerctl previous"
+      ", XF86PowerOff, exec, nohup hyprshutdown -p 'systemctl poweroff'"
     ]
     ++ (
       builtins.concatLists(builtins.genList(

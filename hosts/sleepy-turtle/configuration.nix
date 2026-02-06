@@ -72,6 +72,9 @@
   security.pam.services.hyprlock = {};
   security.rtkit.enable = true;
 
+  services.logind.powerKey = "ignore";
+  services.logind.powerKeyLongPress = "poweroff";
+
   services.blueman.enable = true;
   services.dbus.enable = true;
   services.fprintd.enable = true;
