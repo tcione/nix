@@ -59,6 +59,7 @@
       "XKB_DEFAULT_LAYOUT,us"
       "XKB_DEFAULT_VARIANT,mac"
       "_JAVA_AWT_WM_NONEREPARENTING,1"
+      "GTK_IM_MODULE,simple"
     ];
     bind = [
       "$mod, Return, exec, ghostty"
