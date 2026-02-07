@@ -68,6 +68,7 @@
       "$mod, M, fullscreen, 1"
       "$mod, F, fullscreen, 0"
       "$mod, D, exec, walker"
+      "$mod, B, exec, brave"
       "$mod, T, togglesplit, # dwindle"
       "$mod, V, exec, clipman pick -t wofi"
       "$mod, C, exec, hyprpicker --autocopy --format=hex"
