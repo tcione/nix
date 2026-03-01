@@ -145,6 +145,10 @@
       "3, monitor:DP-1"
       "4, monitor:DP-1"
       "5, monitor:DP-1"
+      "6, monitor:eDP-1"
+      "7, monitor:eDP-1"
+      "8, monitor:eDP-1"
+      "9, monitor:eDP-1"
     ];
     input.repeat_delay = 350;
     input.repeat_rate = 100;

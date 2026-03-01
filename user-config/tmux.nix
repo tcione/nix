@@ -35,11 +35,12 @@
       set -g status-right '#{prefix_highlight} | %a %h-%d %H:%M #{tmux_mode_indicator}'
       # set -g status-style fg=#A6E3A1,bg=#1E1E2E
 
+      set -s default-terminal "tmux-256color"
+      set -sa terminal-features ",xterm-ghostty:RGB"
+
       set-option -g allow-rename off
       set -g default-shell $SHELL
-      set -g default-terminal "xterm-256color"
       set -g default-command "$SHELL -l"
-      set-option -ga terminal-overrides ",xterm-256color:Tc"
       bind-key c new-window -c '#{pane_current_path}'
       bind | split-window -h -c '#{pane_current_path}'
       bind - split-window -v -c '#{pane_current_path}'
