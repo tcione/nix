@@ -98,10 +98,10 @@
 
       # Media buttons
       "$mod SHIFT, BackSpace, exec, ~/.local/bin/power-menu.sh"
-      ", XF86MonBrightnessUp , exec , light -T 1.4 && notify-send -h int:value:$(light -G) \" Brightness\""
-      "SHIFT , XF86MonBrightnessUp , exec , light -A 1 && notify-send -h int:value:$(light -G) \" Brightness\""
-      ", XF86MonBrightnessDown , exec , light -T 0.72 && notify-send -h int:value:$(light -G) \" Brightness\""
-      "SHIFT , XF86MonBrightnessDown , exec , light -U 1 && notify-send -h int:value:$(light -G) \" Brightness\""
+      ", XF86MonBrightnessUp , exec , brightnessctl set +10% && notify-send -h int:value:$(brightnessctl -m | cut -d, -f4 | tr -d '%') \" Brightness\""
+      "SHIFT , XF86MonBrightnessUp , exec , brightnessctl set +1% && notify-send -h int:value:$(brightnessctl -m | cut -d, -f4 | tr -d '%') \" Brightness\""
+      ", XF86MonBrightnessDown , exec , brightnessctl set 10%- && notify-send -h int:value:$(brightnessctl -m | cut -d, -f4 | tr -d '%') \" Brightness\""
+      "SHIFT , XF86MonBrightnessDown , exec , brightnessctl set 1%- && notify-send -h int:value:$(brightnessctl -m | cut -d, -f4 | tr -d '%') \" Brightness\""
       ", XF86AudioRaiseVolume , exec , pamixer -i 5 && notify-send -h int:value:$(pamixer --get-volume) \"  Volume\""
       ", XF86AudioLowerVolume , exec , pamixer -d 5 && notify-send -h int:value:$(pamixer --get-volume) \"  Volume\""
       "ALT, XF86AudioRaiseVolume , exec , pamixer -i 1 && notify-send -h int:value:$(pamixer --get-volume) \"  Volume\""

@@ -19,6 +19,7 @@
     polkit_gnome
     vim
     wget
+    brightnessctl
   ];
   environment.variables.EDITOR = "vim";
 
@@ -51,7 +52,6 @@
   programs._1password-gui.polkitPolicyOwners = [ "tortoise" ];
   programs._1password.enable = true;
   programs.hyprland.enable = true;
-  programs.light.enable = true;
   programs.seahorse.enable = true;
   # programs.ssh.startAgent = true;
   programs.steam.enable = true;

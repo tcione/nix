@@ -52,7 +52,7 @@
     zip
     zola
 
-    libreoffice
+    # libreoffice
 
     # AI
     claude-code
