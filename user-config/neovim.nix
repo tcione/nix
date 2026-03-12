@@ -166,7 +166,7 @@
       }
     ];
     extraConfig = builtins.readFile(./neovim/baseline.vim);
-    extraLuaConfig = ''
+    initLua = ''
     '';
   };
 

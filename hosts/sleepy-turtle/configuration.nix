@@ -72,8 +72,8 @@
   security.pam.services.hyprlock = {};
   security.rtkit.enable = true;
 
-  services.logind.powerKey = "ignore";
-  services.logind.powerKeyLongPress = "poweroff";
+  services.logind.settings.Login.HandlePowerKey = "ignore";
+  services.logind.settings.Login.HandlePowerKeyLongPress = "poweroff";
 
   services.blueman.enable = true;
   services.dbus.enable = true;
@@ -103,7 +103,8 @@
 
   swapDevices = [{ device = "/swapfile"; size = 4000; }];
 
-  time.timeZone = "Europe/Berlin";
+  # time.timeZone = "Europe/Berlin";
+  time.timeZone = "America/Sao_Paulo";
 
   users.defaultUserShell = pkgs.zsh;
   users.users.tortoise.isNormalUser = true;

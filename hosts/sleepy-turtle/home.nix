@@ -56,6 +56,7 @@
 
     # AI
     claude-code
+    codex
 
     # Browsers
     firefox
