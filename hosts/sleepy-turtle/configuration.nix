@@ -20,6 +20,7 @@
     vim
     wget
     brightnessctl
+    steam-devices-udev-rules
   ];
   environment.variables.EDITOR = "vim";
 
@@ -103,8 +104,8 @@
 
   swapDevices = [{ device = "/swapfile"; size = 4000; }];
 
-  # time.timeZone = "Europe/Berlin";
-  time.timeZone = "America/Sao_Paulo";
+  time.timeZone = "Europe/Berlin";
+  # time.timeZone = "America/Sao_Paulo";
 
   users.defaultUserShell = pkgs.zsh;
   users.users.tortoise.isNormalUser = true;
