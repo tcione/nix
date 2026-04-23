@@ -8,10 +8,10 @@
     withNodeJs = false;
 
     extraPackages = with pkgs; [
-      nodePackages.bash-language-server
-      nodePackages.typescript
-      nodePackages.typescript-language-server
-      nodePackages.yaml-language-server
+      bash-language-server
+      typescript
+      typescript-language-server
+      yaml-language-server
       ruby-lsp
       rubocop
       shellcheck

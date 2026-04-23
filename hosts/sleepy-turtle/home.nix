@@ -30,7 +30,7 @@
     jq
     kitty
     lm_sensors
-    mullvad-vpn
+    # mullvad-vpn
     neovide
     nh
     nodejs_24
@@ -56,7 +56,8 @@
 
     # AI
     claude-code
-    codex
+    opencode
+    # codex
 
     # Browsers
     firefox
