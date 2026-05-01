@@ -58,6 +58,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  programs.command-not-found.enable = false;
+
   programs._1password-gui.enable = true;
   programs._1password-gui.package = pkgs._1password-gui;
   programs._1password-gui.polkitPolicyOwners = [ "tortoise" ];
