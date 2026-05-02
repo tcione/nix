@@ -35,6 +35,7 @@
       url = "github:abenz1267/walker";
       inputs.elephant.follows = "elephant";
     };
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
   outputs = { self, nixpkgs, home-manager, darwin, ...}@inputs:
@@ -69,6 +70,7 @@
             (
               final: prev: {
                forest = inputs.forest.packages.${system}.default;
+               pi = inputs.llm-agents.packages.${system}.pi;
              }
             )
           ];

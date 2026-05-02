@@ -14,11 +14,13 @@
   home.packages = with pkgs; [
     # rpi-imager
     # rpiboot
+    # mullvad-vpn
     appimage-run
     bat
     bottom
     brave
     brightnessctl
+    devenv
     fastfetch
     fd
     filezilla
@@ -30,7 +32,6 @@
     jq
     kitty
     lm_sensors
-    # mullvad-vpn
     neovide
     nh
     nodejs_24
@@ -57,6 +58,7 @@
     # AI
     claude-code
     opencode
+    pi
     # codex
 
     # Browsers
