@@ -8,6 +8,7 @@
 
   programs.git = {
     enable = true;
+    signing.format = null;
     ignores = [
       "*.pyc"
       ".DS_Store"

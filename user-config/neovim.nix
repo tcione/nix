@@ -106,6 +106,7 @@
       # Random
       {
         plugin = vim-test;
+        type = "viml";
         config = ''
           let g:test#strategy = 'neovim'
           let g:test#neovim#start_normal = 1
@@ -122,6 +123,7 @@
       }
       {
         plugin = vim-hexokinase;
+        type = "viml";
         config = ''
           let g:Hexokinase_highlighters = ['backgroundfull']
         '';
@@ -136,6 +138,7 @@
       }
       {
         plugin = nerdcommenter;
+        type = "viml";
         config = ''
           let g:NERDDefaultAlign = 'left'
           let g:NERDSpaceDelims = 1
