@@ -8,10 +8,10 @@
     withNodeJs = false;
 
     extraPackages = with pkgs; [
-      nodePackages.bash-language-server
-      nodePackages.typescript
-      nodePackages.typescript-language-server
-      nodePackages.yaml-language-server
+      bash-language-server
+      typescript
+      typescript-language-server
+      yaml-language-server
       ruby-lsp
       rubocop
       shellcheck
@@ -106,6 +106,7 @@
       # Random
       {
         plugin = vim-test;
+        type = "viml";
         config = ''
           let g:test#strategy = 'neovim'
           let g:test#neovim#start_normal = 1
@@ -122,6 +123,7 @@
       }
       {
         plugin = vim-hexokinase;
+        type = "viml";
         config = ''
           let g:Hexokinase_highlighters = ['backgroundfull']
         '';
@@ -136,6 +138,7 @@
       }
       {
         plugin = nerdcommenter;
+        type = "viml";
         config = ''
           let g:NERDDefaultAlign = 'left'
           let g:NERDSpaceDelims = 1

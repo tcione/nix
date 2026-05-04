@@ -4,6 +4,7 @@
   home.username = "lapis";
   home.homeDirectory = "/Users/lapis";
   home.stateVersion = "24.11";
+  home.sessionVariables.NH_FLAKE = "/Users/lapis/Projects/nix";
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
@@ -45,7 +46,7 @@
   programs.mise = {
     enable = true;
     enableZshIntegration = true;
-    settings = {
+    globalConfig.settings = {
       idiomatic_version_file_enable_tools = ["ruby" "node"];
     };
   };

@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
   nix.enable = false;
+  nixpkgs.config.allowUnfree = true;
+
   programs.zsh.enable = true;
 
   users.users.lapis = {
@@ -15,7 +17,7 @@
       "appcleaner"
       "ghostty"
       "hiddenbar"
-      "homebrew/cask-fonts/font-fira-code-nerd-font"
+      "font-fira-code-nerd-font"
       "imageoptim"
       "numi"
       "orbstack"
