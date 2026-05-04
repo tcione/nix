@@ -2,7 +2,12 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [ ./hardware-configuration.nix ];
@@ -10,7 +15,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.enable = true;
 
-  environment.etc."polkit-gnome-authentication-agent-1".source = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+  environment.etc."polkit-gnome-authentication-agent-1".source =
+    "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
   environment.shells = [ pkgs.zsh ];
   environment.systemPackages = with pkgs; [
     curl
@@ -20,6 +26,7 @@
     vim
     wget
     brightnessctl
+    steam-devices-udev-rules
   ];
   environment.variables.EDITOR = "vim";
 
@@ -42,10 +49,16 @@
   networking.networkmanager.wifi.backend = "iwd";
   networking.networkmanager.wifi.powersave = false;
   networking.wireless.iwd.settings.Network.EnableIPv6 = false;
+  networking.firewall.checkReversePath = false;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   nixpkgs.config.allowUnfree = true;
+
+  programs.command-not-found.enable = false;
 
   programs._1password-gui.enable = true;
   programs._1password-gui.package = pkgs._1password-gui;
@@ -69,7 +82,7 @@
   programs.xfconf.enable = true;
   services.tumbler.enable = true;
 
-  security.pam.services.hyprlock = {};
+  security.pam.services.hyprlock = { };
   security.rtkit.enable = true;
 
   services.logind.settings.Login.HandlePowerKey = "ignore";
@@ -80,20 +93,20 @@
   services.fprintd.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.gvfs.enable = true;
-  services.mullvad-vpn.enable = true;
+  # services.mullvad-vpn.enable = true;
   services.pipewire.alsa.enable = true;
   services.pipewire.alsa.support32Bit = true;
   services.pipewire.enable = true;
   services.pipewire.pulse.enable = true;
   services.pipewire.wireplumber.configPackages = [
     (pkgs.writeTextDir "share/wireplumber/bluetooth.lua.d/51-bluez-config.lua" ''
-     bluez_monitor.properties = {
-       ["bluez5.enable-sbc-xq"] = true,
-       ["bluez5.enable-msbc"] = true,
-       ["bluez5.enable-hw-volume"] = true,
-       ["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
-     }
-     '')
+      bluez_monitor.properties = {
+        ["bluez5.enable-sbc-xq"] = true,
+        ["bluez5.enable-msbc"] = true,
+        ["bluez5.enable-hw-volume"] = true,
+        ["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
+      }
+    '')
   ];
   services.printing.enable = true;
   services.upower.enable = true;
@@ -101,14 +114,25 @@
   # First installed version, used to manage state. DO NOT CHANGE UNLESS THERE'S A GOOD REASON TO
   system.stateVersion = "23.11"; # Did you read the comment?
 
-  swapDevices = [{ device = "/swapfile"; size = 4000; }];
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 4000;
+    }
+  ];
 
-  # time.timeZone = "Europe/Berlin";
-  time.timeZone = "America/Sao_Paulo";
+  time.timeZone = "Europe/Berlin";
+  # time.timeZone = "America/Sao_Paulo";
 
   users.defaultUserShell = pkgs.zsh;
   users.users.tortoise.isNormalUser = true;
-  users.users.tortoise.extraGroups = [ "networkmanager" "wheel" "video" "audio" "docker"];
+  users.users.tortoise.extraGroups = [
+    "networkmanager"
+    "wheel"
+    "video"
+    "audio"
+    "docker"
+  ];
   users.users.tortoise.shell = pkgs.zsh;
 
   virtualisation.docker.rootless = {
@@ -118,5 +142,8 @@
 
   xdg.portal.config.common.default = "*";
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland ];
+  xdg.portal.extraPortals = [
+    pkgs.xdg-desktop-portal-gtk
+    pkgs.xdg-desktop-portal-hyprland
+  ];
 }

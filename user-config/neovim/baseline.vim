@@ -68,7 +68,8 @@
   map <C-h> <C-W>h
   map <C-l> <C-W>l
 
-  nnoremap <leader>p <cmd>Telescope find_files<cr>
+  nnoremap <leader>p <cmd>Telescope git_files<cr>
+  nnoremap <leader>pwd <cmd>Telescope find_files<cr>
   nnoremap ; <cmd>Telescope buffers<cr>
   nnoremap <leader>fg <cmd>Telescope live_grep<cr>
   nnoremap <leader>fh <cmd>Telescope help_tags<cr>

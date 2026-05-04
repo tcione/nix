@@ -15,6 +15,10 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     sundial = {
       url = "github:tcione/sundial";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,6 +35,7 @@
       url = "github:abenz1267/walker";
       inputs.elephant.follows = "elephant";
     };
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
   outputs = { self, nixpkgs, home-manager, darwin, ...}@inputs:
@@ -48,6 +53,7 @@
             home-manager.users.lapis = {
               imports = [
                 inputs.sops-nix.homeManagerModules.sops
+                inputs.nix-index-database.homeModules.nix-index
                 ./hosts/MAC2022HJ49/home.nix
               ];
             };
@@ -64,6 +70,7 @@
             (
               final: prev: {
                forest = inputs.forest.packages.${system}.default;
+               pi = inputs.llm-agents.packages.${system}.pi;
              }
             )
           ];
@@ -77,6 +84,7 @@
             inputs.sops-nix.homeManagerModules.sops
             inputs.sundial.homeManagerModules.${system}.default
             inputs.forest.homeManagerModules.${system}.default
+            inputs.nix-index-database.homeModules.nix-index
             ./hosts/sleepy-turtle/home.nix
           ];
         }

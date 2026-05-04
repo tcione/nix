@@ -14,11 +14,13 @@
   home.packages = with pkgs; [
     # rpi-imager
     # rpiboot
+    # mullvad-vpn
     appimage-run
     bat
     bottom
     brave
     brightnessctl
+    devenv
     fastfetch
     fd
     filezilla
@@ -30,7 +32,6 @@
     jq
     kitty
     lm_sensors
-    mullvad-vpn
     neovide
     nh
     nodejs_24
@@ -56,7 +57,9 @@
 
     # AI
     claude-code
-    codex
+    opencode
+    pi
+    # codex
 
     # Browsers
     firefox
@@ -169,7 +172,7 @@
 
   imports = [
     ../../user-config/chromium.nix
-    ../../user-config/command-not-found.nix
+    ../../user-config/nix-index.nix
     ../../user-config/dconf.nix
     ../../user-config/desktop-session-scripts.nix
     ../../user-config/direnv.nix

@@ -52,7 +52,7 @@
   };
 
   imports = [
-    ../../user-config/command-not-found.nix
+    ../../user-config/nix-index.nix
     ../../user-config/direnv.nix
     ../../user-config/eza.nix
     ../../user-config/fzf.nix
