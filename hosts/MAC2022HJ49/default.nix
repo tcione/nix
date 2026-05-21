@@ -5,6 +5,8 @@
 
   programs.zsh.enable = true;
 
+  security.pam.services.sudo_local.touchIdAuth = true;
+
   users.users.lapis = {
     shell = pkgs.zsh;
     name = "lapis";

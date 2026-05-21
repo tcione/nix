@@ -16,6 +16,7 @@
     bruno
     bruno-cli
     claude-code
+    devenv
     e1s
     gettext
     gh
