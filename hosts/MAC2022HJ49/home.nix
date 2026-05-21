@@ -8,12 +8,14 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+    _1password-cli
     aws-vault
-    awscli
+    awscli2
     bat
     bottom
     bruno
     bruno-cli
+    claude-code
     e1s
     gettext
     gh
@@ -24,6 +26,7 @@
     ripgrep
     sops
     tldr
+    uv
     yarn
     yq
   ];

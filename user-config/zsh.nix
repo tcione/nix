@@ -7,6 +7,7 @@ let
       if [[ $(uname -m) == 'arm64' ]]; then
         eval "$(/opt/homebrew/bin/brew shellenv)"
       fi
+      source /Users/lapis/.safe-chain/scripts/init-posix.sh
     '';
     profileExtra = ''
       export EDITOR='vim'

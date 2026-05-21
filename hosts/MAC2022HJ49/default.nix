@@ -13,6 +13,10 @@
 
   homebrew = {
     enable = true;
+    onActivation = {
+      upgrade = true;
+      cleanup = "zap";
+    };
     casks = [
       "appcleaner"
       "ghostty"
