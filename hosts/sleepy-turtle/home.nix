@@ -14,7 +14,8 @@
   home.packages = with pkgs; [
     # rpi-imager
     # rpiboot
-    # mullvad-vpn
+    mullvad-vpn
+
     appimage-run
     bat
     bottom
