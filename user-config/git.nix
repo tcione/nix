@@ -25,6 +25,8 @@
       "__todo.txt"
       "vim/.netrwhist"
       "noice.log"
+      "claude.env"
+      ".claude/commands/fixr.md"
     ];
     settings = {
       alias = {

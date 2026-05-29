@@ -19,6 +19,7 @@
       nil
       ltex-ls
       lua-language-server
+      clang-tools
     ];
 
     plugins = with pkgs.vimPlugins; [

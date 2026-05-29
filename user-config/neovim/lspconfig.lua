@@ -44,6 +44,9 @@ vim.lsp.enable('rust_analyzer')
 vim.lsp.config('bashls', { on_attach = on_lsp_attach, capabilities = capabilities, })
 vim.lsp.enable('bashls')
 
+vim.lsp.config('clangd', { on_attach = on_lsp_attach, capabilities = capabilities, })
+vim.lsp.enable('clangd')
+
 vim.lsp.config('html', { on_attach = on_lsp_attach, capabilities = capabilities, })
 vim.lsp.enable('html')
 

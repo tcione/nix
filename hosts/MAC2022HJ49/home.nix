@@ -12,6 +12,7 @@
     aws-vault
     awscli2
     bat
+    bear
     bottom
     bruno
     bruno-cli
