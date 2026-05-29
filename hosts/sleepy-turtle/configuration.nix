@@ -93,7 +93,7 @@
   services.fprintd.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.gvfs.enable = true;
-  # services.mullvad-vpn.enable = true;
+  services.mullvad-vpn.enable = true;
   services.pipewire.alsa.enable = true;
   services.pipewire.alsa.support32Bit = true;
   services.pipewire.enable = true;
