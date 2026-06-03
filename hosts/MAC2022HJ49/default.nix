@@ -21,6 +21,7 @@
     };
     casks = [
       "appcleaner"
+      "firefox"
       "ghostty"
       "hiddenbar"
       "font-fira-code-nerd-font"

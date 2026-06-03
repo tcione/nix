@@ -63,7 +63,6 @@
     # codex
 
     # Browsers
-    firefox
     google-chrome
 
     # Desktop
@@ -179,6 +178,7 @@
     ../../user-config/direnv.nix
     ../../user-config/dunst.nix
     ../../user-config/eza.nix
+    ../../user-config/firefox.nix
     ../../user-config/fzf.nix
     ../../user-config/ghostty.nix
     ../../user-config/git.nix
