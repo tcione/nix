@@ -1,11 +1,11 @@
 require("zen-mode").setup({
   window = {
-    backdrop = 1,
     width = 80,
     height = 1,
     options = {
       signcolumn = "no",
       number = false,
+      relativenumber = false,
       colorcolumn = "",
     },
   },
@@ -14,18 +14,17 @@ require("zen-mode").setup({
       enabled = true,
       ruler = true,
       showcmd = false,
-      relativenumber = false,
       spell = true,
     },
-    kitty = {
-      enabled = false,
-      font = "+4",
-    },
+    twilight = { enabled = false },
+    kitty = { enabled = false },
   },
-  on_open = function(win)
-    require('cmp').setup.buffer { enabled = false }
+  on_open = function()
+    require('cmp').setup.buffer({ enabled = false })
   end,
   on_close = function()
-    require('cmp').setup.buffer { enabled = true }
+    require('cmp').setup.buffer({ enabled = true })
   end,
 })
+
+vim.keymap.set('n', '<leader>z', '<cmd>ZenMode<cr>', { desc = 'Toggle Zen Mode' })

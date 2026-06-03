@@ -23,9 +23,11 @@
     ];
 
     plugins = with pkgs.vimPlugins; [
-      nvim-treesitter
-
-      fzf-lua
+      {
+        plugin = nvim-treesitter.withAllGrammars;
+        type = "lua";
+        config = builtins.readFile(./neovim/treesitter.lua);
+      }
 
       # Telescope
       plenary-nvim
@@ -51,18 +53,6 @@
       telescope-fzf-native-nvim
 
       # LSP
-      {
-        plugin = lsp-colors-nvim;
-        type = "lua";
-        config = ''
-          require("lsp-colors").setup({
-            Error = "#db4b4b",
-            Warning = "#e0af68",
-            Information = "#0db9d7",
-            Hint = "#10B981"
-          })
-        '';
-      }
       {
         plugin = trouble-nvim;
         type = "lua";
@@ -123,10 +113,10 @@
         '';
       }
       {
-        plugin = vim-hexokinase;
-        type = "viml";
+        plugin = nvim-colorizer-lua;
+        type = "lua";
         config = ''
-          let g:Hexokinase_highlighters = ['backgroundfull']
+          require('colorizer').setup()
         '';
       }
       {
@@ -135,14 +125,6 @@
         config = ''
           require("catppuccin").setup({})
           vim.cmd.colorscheme "catppuccin"
-        '';
-      }
-      {
-        plugin = nerdcommenter;
-        type = "viml";
-        config = ''
-          let g:NERDDefaultAlign = 'left'
-          let g:NERDSpaceDelims = 1
         '';
       }
       {
@@ -169,9 +151,7 @@
         config = builtins.readFile(./neovim/fidget-nvim.lua);
       }
     ];
-    extraConfig = builtins.readFile(./neovim/baseline.vim);
-    initLua = ''
-    '';
+    initLua = builtins.readFile(./neovim/baseline.lua);
   };
 
 }
