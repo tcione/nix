@@ -78,6 +78,10 @@ in
       };
       animations.enabled = true;
       dwindle.preserve_split = true;
+      binds.workspace_back_and_forth = true;
+      cursor.no_warps = true;
+      cursor.inactive_timeout = 5;
+      misc.focus_on_activate = true;
     };
 
     env = [
@@ -106,15 +110,15 @@ in
     ];
 
     workspace_rule = [
-      { workspace = "1"; monitor = "DP-1"; default = true; }
-      { workspace = "2"; monitor = "DP-1"; }
-      { workspace = "3"; monitor = "DP-1"; }
-      { workspace = "4"; monitor = "DP-1"; }
-      { workspace = "5"; monitor = "DP-1"; }
-      { workspace = "6"; monitor = "eDP-1"; }
-      { workspace = "7"; monitor = "eDP-1"; }
-      { workspace = "8"; monitor = "eDP-1"; }
-      { workspace = "9"; monitor = "eDP-1"; }
+      { workspace = "1"; monitor = "DP-1"; default = true; persistent = true; }
+      { workspace = "2"; monitor = "DP-1"; persistent = true; }
+      { workspace = "3"; monitor = "DP-1"; persistent = true; }
+      { workspace = "4"; monitor = "DP-1"; persistent = true; }
+      { workspace = "5"; monitor = "DP-1"; persistent = true; }
+      { workspace = "6"; monitor = "eDP-1"; persistent = true; }
+      { workspace = "7"; monitor = "eDP-1"; persistent = true; }
+      { workspace = "8"; monitor = "eDP-1"; persistent = true; }
+      { workspace = "9"; monitor = "eDP-1"; persistent = true; }
     ];
 
     animation = [
@@ -224,13 +228,11 @@ in
           function()
             hl.exec_cmd("dunst")
             hl.exec_cmd("blueman-applet")
-            hl.exec_cmd("/etc/polkit-gnome-authentication-agent-1")
+            hl.exec_cmd("${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1")
             hl.exec_cmd("wl-paste -t text --watch clipman store --no-persist")
             hl.exec_cmd("wl-paste -t image --watch clipman store --no-persist")
             hl.exec_cmd("udiskie")
-            hl.exec_cmd("systemctl --user start waybar")
             hl.exec_cmd("systemctl --user start sundial")
-            hl.exec_cmd("systemctl --user start timers.target")
             hl.exec_cmd("1password --silent")
             hl.exec_cmd("todoist-electron")
             hl.exec_cmd("signal-desktop")

@@ -130,6 +130,8 @@
     gtk.enable = true;
   };
 
+  home.sessionVariables.SSH_AUTH_SOCK = "${config.home.homeDirectory}/.1password/agent.sock";
+
   programs.forest = {
     enable = true;
     settings = {

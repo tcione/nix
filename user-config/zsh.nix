@@ -30,11 +30,7 @@ in
         export NIXOS_OZONE_WL=1
 
         if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-          eval $(gnome-keyring-daemon -sd)
-          export SSH_AUTH_SOCK=~/.1password/agent.sock
-          systemctl --user import-environment PATH
-
-          start-hyprland
+          exec uwsm start hyprland-uwsm.desktop
         fi
       '';
     } // darwinConfig;

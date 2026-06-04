@@ -15,8 +15,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.enable = true;
 
-  environment.etc."polkit-gnome-authentication-agent-1".source =
-    "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
   environment.shells = [ pkgs.zsh ];
   environment.systemPackages = with pkgs; [
     curl
@@ -64,6 +62,7 @@
   programs._1password-gui.polkitPolicyOwners = [ "tortoise" ];
   programs._1password.enable = true;
   programs.hyprland.enable = true;
+  programs.hyprland.withUWSM = true;
   programs.seahorse.enable = true;
   # SSH agent is provided by 1password (see SSH_AUTH_SOCK in user-config/zsh.nix)
   programs.steam.enable = true;
