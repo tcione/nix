@@ -61,12 +61,11 @@
   programs.command-not-found.enable = false;
 
   programs._1password-gui.enable = true;
-  programs._1password-gui.package = pkgs._1password-gui;
   programs._1password-gui.polkitPolicyOwners = [ "tortoise" ];
   programs._1password.enable = true;
   programs.hyprland.enable = true;
   programs.seahorse.enable = true;
-  # programs.ssh.startAgent = true;
+  # SSH agent is provided by 1password (see SSH_AUTH_SOCK in user-config/zsh.nix)
   programs.steam.enable = true;
   programs.steam.remotePlay.openFirewall = true;
   programs.steam.dedicatedServer.openFirewall = true;
@@ -94,6 +93,7 @@
   services.gnome.gnome-keyring.enable = true;
   services.gvfs.enable = true;
   services.mullvad-vpn.enable = true;
+  services.mullvad-vpn.package = pkgs.mullvad-vpn;
   services.pipewire.alsa.enable = true;
   services.pipewire.alsa.support32Bit = true;
   services.pipewire.enable = true;
@@ -129,7 +129,6 @@
     "wheel"
     "video"
     "audio"
-    "docker"
   ];
   users.users.tortoise.shell = pkgs.zsh;
 

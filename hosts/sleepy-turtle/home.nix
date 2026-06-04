@@ -14,20 +14,17 @@
   home.packages = with pkgs; [
     # rpi-imager
     # rpiboot
-    mullvad-vpn
 
     appimage-run
     bat
     bottom
     brave
-    brightnessctl
     devenv
     fastfetch
     fd
     filezilla
     gh
     gimp3-with-plugins
-    git
     go
     guvcview
     jq
