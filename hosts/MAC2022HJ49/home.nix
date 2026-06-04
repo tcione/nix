@@ -64,7 +64,6 @@
     ../../user-config/fzf.nix
     ../../user-config/ghostty.nix
     ../../user-config/git.nix
-    ../../user-config/kitty.nix
     ../../user-config/neovim.nix
     ../../user-config/starship.nix
     ../../user-config/tmux.nix

@@ -31,7 +31,6 @@
     go
     guvcview
     jq
-    kitty
     lm_sensors
     neovide
     nh
@@ -188,7 +187,6 @@
     ../../user-config/hyprlock.nix
     ../../user-config/hyprpaper.nix
     ../../user-config/imv.nix
-    ../../user-config/kitty.nix
     ../../user-config/neovim.nix
     ../../user-config/starship.nix
     ../../user-config/sundial.nix
