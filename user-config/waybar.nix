@@ -41,7 +41,6 @@
         "hyprland/workspaces" = {
           disable-scroll = true;
           all-outputs = true;
-          on-click = "activate";
           format = "[{name}]";
           format-icons = {
             default = "[ø]";
