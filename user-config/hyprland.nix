@@ -133,7 +133,7 @@ in
       (modBind "F" ''function() hl.window.fullscreen({ action = "toggle", mode = "fullscreen" }) end'')
       (modBind "D" ''hl.dsp.exec_cmd("walker")'')
       (modBind "B" ''hl.dsp.exec_cmd("brave")'')
-      (modBind "V" ''hl.dsp.exec_cmd("clipman pick -t wofi")'')
+      (modBind "V" ''hl.dsp.exec_cmd("clipman pick -t custom -T 'walker --dmenu'")'')
       (modBind "C" ''hl.dsp.exec_cmd("hyprpicker --autocopy --format=hex")'')
 
       (modBind "h" ''hl.dsp.focus({ direction = "left" })'')
