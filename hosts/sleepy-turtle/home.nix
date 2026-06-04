@@ -130,14 +130,6 @@
     gtk.enable = true;
   };
 
-  # home.file."./.config/walker/themes/sleepy-turtle.css" = {
-    # source = ../../user-config/files/walker/sleepy-turtle.css;
-  # };
-
-  # home.file."./.config/walker/themes/sleepy-turtle.toml" = {
-    # source = ../../user-config/files/walker/sleepy-turtle.toml;
-  # };
-
   programs.forest = {
     enable = true;
     settings = {

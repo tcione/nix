@@ -12,7 +12,6 @@
         modules-left = [
           "custom/system"
           "hyprland/workspaces"
-          # "hyprland/window"
         ];
         modules-center = [
           "clock"
@@ -136,17 +135,6 @@
         "custom/system" = {
           format = "";
           on-click = "ghostty --class=tui-centered -e fastfetch";
-        };
-        "hyprland/window" = {
-          format = "  [{class}] {title}";
-          separate-outputs = true;
-          rewrite = {
-            ".*\\[Signal\\].*" = "  Signal";
-            ".*\\[firefox\\] (.*) — Mozilla Firefox" = "  $1";
-            ".*\\[chromium-browser\\](.*) - Chromium" = "  $1";
-            ".*\\[\\].*" = "٩(˘◡˘)۶";
-            ".*\\[com\.mitchellh\.ghostty\\] (.*)" = " $1";
-          };
         };
       };
     };

@@ -162,7 +162,7 @@ in
       (modBind "SHIFT + P" ''hl.dsp.exec_cmd([[grim -t jpeg -g "$(slurp)" ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).jpg]])'')
 
       # Power
-      (modBind "SHIFT + BackSpace" ''hl.dsp.exec_cmd("~/.local/bin/power-menu.sh")'')
+      (modBind "SHIFT + BackSpace" ''hl.dsp.exec_cmd("${config.home.homeDirectory}/.local/bin/power-menu.sh")'')
 
       # Brightness
       (rawBind "XF86MonBrightnessUp" ''hl.dsp.exec_cmd([[brightnessctl set +10% && notify-send -h int:value:$(brightnessctl -m | cut -d, -f4 | tr -d '%') " Brightness"]])'')
@@ -176,7 +176,7 @@ in
       (rawBind "ALT + XF86AudioRaiseVolume" ''hl.dsp.exec_cmd([[pamixer -i 1 && notify-send -h int:value:$(pamixer --get-volume) "  Volume"]])'')
       (rawBind "ALT + XF86AudioLowerVolume" ''hl.dsp.exec_cmd([[pamixer -d 1 && notify-send -h int:value:$(pamixer --get-volume) "  Volume"]])'')
 
-      (rawBind "XF86AudioMute" ''hl.dsp.exec_cmd("~/.local/bin/hyprland-mute.sh")'')
+      (rawBind "XF86AudioMute" ''hl.dsp.exec_cmd("${config.home.homeDirectory}/.local/bin/hyprland-mute.sh")'')
       (rawBind "SHIFT + XF86AudioRaiseVolume" ''hl.dsp.exec_cmd("playerctl next")'')
       (rawBind "SHIFT + XF86AudioLowerVolume" ''hl.dsp.exec_cmd("playerctl previous")'')
       (rawBind "SHIFT + XF86AudioMute" ''hl.dsp.exec_cmd("playerctl play-pause")'')
