@@ -110,15 +110,15 @@ in
     ];
 
     workspace_rule = [
-      { workspace = "1"; monitor = "DP-1"; default = true; persistent = true; }
-      { workspace = "2"; monitor = "DP-1"; persistent = true; }
-      { workspace = "3"; monitor = "DP-1"; persistent = true; }
-      { workspace = "4"; monitor = "DP-1"; persistent = true; }
-      { workspace = "5"; monitor = "DP-1"; persistent = true; }
-      { workspace = "6"; monitor = "eDP-1"; persistent = true; }
-      { workspace = "7"; monitor = "eDP-1"; persistent = true; }
-      { workspace = "8"; monitor = "eDP-1"; persistent = true; }
-      { workspace = "9"; monitor = "eDP-1"; persistent = true; }
+      { workspace = "1"; monitor = "DP-1"; default = true; }
+      { workspace = "2"; monitor = "DP-1"; }
+      { workspace = "3"; monitor = "DP-1"; }
+      { workspace = "4"; monitor = "DP-1"; }
+      { workspace = "5"; monitor = "DP-1"; }
+      { workspace = "6"; monitor = "eDP-1"; }
+      { workspace = "7"; monitor = "eDP-1"; }
+      { workspace = "8"; monitor = "eDP-1"; }
+      { workspace = "9"; monitor = "eDP-1"; }
     ];
 
     animation = [
