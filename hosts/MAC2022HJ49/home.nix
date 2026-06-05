@@ -19,6 +19,7 @@
     claude-code
     devenv
     e1s
+    fd
     gettext
     gh
     gobject-introspection
@@ -69,6 +70,7 @@
     ../../user-config/starship.nix
     ../../user-config/tmux.nix
     ../../user-config/vim.nix
+    ../../user-config/yazi.nix
     ../../user-config/zoxide.nix
     ../../user-config/zsh.nix
   ];

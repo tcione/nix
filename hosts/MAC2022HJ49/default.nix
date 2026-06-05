@@ -22,9 +22,9 @@
     casks = [
       "appcleaner"
       "firefox"
+      "font-fira-code-nerd-font"
       "ghostty"
       "hiddenbar"
-      "font-fira-code-nerd-font"
       "imageoptim"
       "numi"
       "orbstack"
@@ -34,7 +34,7 @@
       "spotify"
       "superhuman"
       "the-unarchiver"
-      "todoist"
+      "todoist-app"
       "trailer"
       "visual-studio-code"
     ];
@@ -75,6 +75,7 @@
       wvous-tr-corner = null;
     };
     NSGlobalDomain = {
+      AppleInterfaceStyle = "Dark";
       "com.apple.mouse.tapBehavior" = 1;
       "com.apple.springing.delay" = 0.0;
       "com.apple.springing.enabled" = true;
@@ -116,6 +117,17 @@
     LaunchServices = {
       LSQuarantine = false;
     };
+    WindowManager = {
+      GloballyEnabled = false;
+      EnableStandardClickToShowDesktop = false;
+    };
+    menuExtraClock = {
+      Show24Hour = true;
+      ShowSeconds = false;
+    };
+    loginwindow = {
+      GuestEnabled = false;
+    };
     CustomUserPreferences = {
       NSGlobalDomain = {
         NSToolbarTitleViewRolloverDelay = 0;
@@ -132,7 +144,7 @@
         FXEnableExtensionChangeWarning = false;
         FXPreferredViewStyle = "clmv";
         NewWindowTarget = "PfDe";
-        NewWindowTargetPath = "file://Users/lapis/Desktop/";
+        NewWindowTargetPath = "file:///Users/lapis/Desktop/";
         OpenWindowForNewRemovableDisk = true;
         QuitMenuItem = true;
         ShowExternalHardDrivesOnDesktop = true;
