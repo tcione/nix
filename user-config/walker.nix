@@ -7,11 +7,5 @@
     config = {
       theme = "default";
     };
-
-    themes = {
-      "sleepy-turtle" = {
-        style = builtins.readFile(./files/walker-style.css);
-      };
-    };
   };
 }

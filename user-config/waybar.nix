@@ -12,7 +12,6 @@
         modules-left = [
           "custom/system"
           "hyprland/workspaces"
-          # "hyprland/window"
         ];
         modules-center = [
           "clock"
@@ -42,7 +41,6 @@
         "hyprland/workspaces" = {
           disable-scroll = true;
           all-outputs = true;
-          on-click = "activate";
           format = "[{name}]";
           format-icons = {
             default = "[ø]";
@@ -85,11 +83,11 @@
         cpu = {
           format = "{usage}% ";
           tooltip = false;
-          on-click = "kitty --class tui-centered btm";
+          on-click = "ghostty --class=tui-centered -e btm";
         };
         memory = {
           format = "{}% ";
-          on-click = "kitty --class tui-centered btm";
+          on-click = "ghostty --class=tui-centered -e btm";
         };
         temperature = {
           thermal-zone = 1;
@@ -113,7 +111,7 @@
           format-linked = "{ifname} (No IP) ";
           format-disconnected = "⚠";
           format-alt = "{ifname}: {ipaddr}/{cidr}";
-          on-click-right = "kitty --class tui-centered --hold impala";
+          on-click-right = "ghostty --class=tui-centered -e impala";
         };
         pulseaudio = {
           format = "{volume}% {icon}";
@@ -135,19 +133,7 @@
         };
         "custom/system" = {
           format = "";
-          on-click = "kitty --class tui-centered --hold fastfetch";
-        };
-        "hyprland/window" = {
-          format = "  [{class}] {title}";
-          separate-outputs = true;
-          rewrite = {
-            ".*\\[Signal\\].*" = "  Signal";
-            ".*\\[firefox\\] (.*) — Mozilla Firefox" = "  $1";
-            ".*\\[chromium-browser\\](.*) - Chromium" = "  $1";
-            ".*\\[kitty\\] (.*)" = "  $1";
-            ".*\\[\\].*" = "٩(˘◡˘)۶";
-            ".*\\[com\.mitchellh\.ghostty\\] (.*)" = " $1";
-          };
+          on-click = "ghostty --class=tui-centered -e fastfetch";
         };
       };
     };

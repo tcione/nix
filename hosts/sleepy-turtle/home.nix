@@ -14,24 +14,20 @@
   home.packages = with pkgs; [
     # rpi-imager
     # rpiboot
-    mullvad-vpn
 
     appimage-run
     bat
     bottom
     brave
-    brightnessctl
     devenv
     fastfetch
     fd
     filezilla
     gh
     gimp3-with-plugins
-    git
     go
     guvcview
     jq
-    kitty
     lm_sensors
     neovide
     nh
@@ -134,13 +130,7 @@
     gtk.enable = true;
   };
 
-  # home.file."./.config/walker/themes/sleepy-turtle.css" = {
-    # source = ../../user-config/files/walker/sleepy-turtle.css;
-  # };
-
-  # home.file."./.config/walker/themes/sleepy-turtle.toml" = {
-    # source = ../../user-config/files/walker/sleepy-turtle.toml;
-  # };
+  home.sessionVariables.SSH_AUTH_SOCK = "${config.home.homeDirectory}/.1password/agent.sock";
 
   programs.forest = {
     enable = true;
@@ -188,7 +178,6 @@
     ../../user-config/hyprlock.nix
     ../../user-config/hyprpaper.nix
     ../../user-config/imv.nix
-    ../../user-config/kitty.nix
     ../../user-config/neovim.nix
     ../../user-config/starship.nix
     ../../user-config/sundial.nix

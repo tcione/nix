@@ -15,8 +15,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.enable = true;
 
-  environment.etc."polkit-gnome-authentication-agent-1".source =
-    "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
   environment.shells = [ pkgs.zsh ];
   environment.systemPackages = with pkgs; [
     curl
@@ -61,12 +59,12 @@
   programs.command-not-found.enable = false;
 
   programs._1password-gui.enable = true;
-  programs._1password-gui.package = pkgs._1password-gui;
   programs._1password-gui.polkitPolicyOwners = [ "tortoise" ];
   programs._1password.enable = true;
   programs.hyprland.enable = true;
+  programs.hyprland.withUWSM = true;
   programs.seahorse.enable = true;
-  # programs.ssh.startAgent = true;
+  # SSH agent is provided by 1password (see SSH_AUTH_SOCK in user-config/zsh.nix)
   programs.steam.enable = true;
   programs.steam.remotePlay.openFirewall = true;
   programs.steam.dedicatedServer.openFirewall = true;
@@ -94,20 +92,19 @@
   services.gnome.gnome-keyring.enable = true;
   services.gvfs.enable = true;
   services.mullvad-vpn.enable = true;
+  services.mullvad-vpn.package = pkgs.mullvad-vpn;
   services.pipewire.alsa.enable = true;
   services.pipewire.alsa.support32Bit = true;
   services.pipewire.enable = true;
   services.pipewire.pulse.enable = true;
-  services.pipewire.wireplumber.configPackages = [
-    (pkgs.writeTextDir "share/wireplumber/bluetooth.lua.d/51-bluez-config.lua" ''
-      bluez_monitor.properties = {
-        ["bluez5.enable-sbc-xq"] = true,
-        ["bluez5.enable-msbc"] = true,
-        ["bluez5.enable-hw-volume"] = true,
-        ["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
-      }
-    '')
-  ];
+  services.pipewire.wireplumber.extraConfig."51-bluez" = {
+    "monitor.bluez.properties" = {
+      "bluez5.enable-sbc-xq" = true;
+      "bluez5.enable-msbc" = true;
+      "bluez5.enable-hw-volume" = true;
+      "bluez5.roles" = [ "hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag" ];
+    };
+  };
   services.printing.enable = true;
   services.upower.enable = true;
 
@@ -131,7 +128,6 @@
     "wheel"
     "video"
     "audio"
-    "docker"
   ];
   users.users.tortoise.shell = pkgs.zsh;
 
