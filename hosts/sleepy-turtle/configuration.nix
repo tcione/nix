@@ -141,6 +141,7 @@
   };
 
   xdg.portal.config.common.default = "*";
+  xdg.portal.config.common."org.freedesktop.impl.portal.Settings" = [ "gtk" ];
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [
     pkgs.xdg-desktop-portal-gtk
