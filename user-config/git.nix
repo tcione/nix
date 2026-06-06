@@ -31,7 +31,7 @@
     settings = {
       alias = {
         aa = "add --all";
-        discard = "!f() { git reset --hard && git clean -xfd }; f";
+        discard = "!f() { git reset --hard && git clean -xfd; }; f";
         l = "log --pretty=oneline -n 20 --graph --abbrev-commit";
         l-tree = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
         patch = "!f() { git add --all; git commit --amend --no-edit; }; f";

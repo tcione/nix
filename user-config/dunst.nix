@@ -50,8 +50,8 @@
         show_indicators = "yes";
         sticky_history = "yes";
         history_length = 20;
-        dmenu = "/usr/bin/dmenu -p dunst:";
-        browser = "/usr/bin/xdg-open";
+        dmenu = "walker --dmenu";
+        browser = "${pkgs.xdg-utils}/bin/xdg-open";
         always_run_script = true;
         title = "Dunst";
         class = "Dunst";

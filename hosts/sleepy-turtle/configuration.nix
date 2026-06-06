@@ -24,7 +24,6 @@
     vim
     wget
     brightnessctl
-    steam-devices-udev-rules
   ];
   environment.variables.EDITOR = "vim";
 
