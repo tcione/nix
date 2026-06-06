@@ -216,8 +216,8 @@ in
       # System popups
       { match.class = "^tui-centered$"; float = true; }
       { match.class = "^tui-centered$"; center = true; }
-      { match.class = "^org\\.pulseaudio\\.pavucontrol$"; float = true; }
-      { match.class = "^org\\.pulseaudio\\.pavucontrol$"; center = true; }
+      { match.class = "^com\\.saivert\\.pwvucontrol$"; float = true; }
+      { match.class = "^com\\.saivert\\.pwvucontrol$"; center = true; }
 
       # Special spaces
       { match.class = "Todoist"; workspace = "special:todoist silent"; }

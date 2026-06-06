@@ -79,8 +79,8 @@
     libheif
     mpv
     pamixer
-    pavucontrol
     playerctl
+    pwvucontrol
     vimiv-qt
     viu
 
