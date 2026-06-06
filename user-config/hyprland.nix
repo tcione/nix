@@ -39,6 +39,9 @@ let
 in
 
 {
+  services.hyprpolkitagent.enable = true;
+  services.cliphist.enable = true;
+
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.configType = "lua";
   wayland.windowManager.hyprland.settings = {
@@ -137,7 +140,7 @@ in
       (modBind "F" ''function() hl.window.fullscreen({ action = "toggle", mode = "fullscreen" }) end'')
       (modBind "D" ''hl.dsp.exec_cmd("walker")'')
       (modBind "B" ''hl.dsp.exec_cmd("firefox")'')
-      (modBind "V" ''hl.dsp.exec_cmd("clipman pick -t custom -T 'walker --dmenu'")'')
+      (modBind "V" ''hl.dsp.exec_cmd([[cliphist list | walker --dmenu | cliphist decode | wl-copy]])'')
       (modBind "C" ''hl.dsp.exec_cmd("hyprpicker --autocopy --format=hex")'')
 
       (modBind "h" ''hl.dsp.focus({ direction = "left" })'')
@@ -228,9 +231,6 @@ in
           function()
             hl.exec_cmd("dunst")
             hl.exec_cmd("blueman-applet")
-            hl.exec_cmd("${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1")
-            hl.exec_cmd("wl-paste -t text --watch clipman store --no-persist")
-            hl.exec_cmd("wl-paste -t image --watch clipman store --no-persist")
             hl.exec_cmd("udiskie")
             hl.exec_cmd("systemctl --user start sundial")
             hl.exec_cmd("1password --silent")

@@ -26,7 +26,6 @@ in
         export PATH="$PATH:$HOME/.local/bin"
       '';
       profileExtra = ''
-        export EDITOR='vim'
         export NIXOS_OZONE_WL=1
 
         if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then

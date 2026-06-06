@@ -20,7 +20,6 @@
     curl
     git
     kdePackages.ark
-    polkit_gnome
     vim
     wget
     brightnessctl
@@ -52,6 +51,12 @@
     "nix-command"
     "flakes"
   ];
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+  nix.settings.auto-optimise-store = true;
 
   nixpkgs.config.allowUnfree = true;
 

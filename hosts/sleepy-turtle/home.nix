@@ -62,7 +62,6 @@
     google-chrome
 
     # Desktop
-    clipman
     grim
     hyprpicker
     hyprshutdown
