@@ -31,6 +31,7 @@
         padding = 8;
         horizontal_padding = 8;
         text_icon_padding = 0;
+        max_icon_size = 128;
         frame_width = 1;
         frame_color = "#77777780";
         gap_size = 4;
@@ -59,7 +60,7 @@
         ignore_dbusclose = false;
         force_xwayland = false;
         force_xinerama = false;
-        mouse_left_click = "close_current";
+        mouse_left_click = "do_action, close_current";
         mouse_middle_click = "do_action, close_current";
         mouse_right_click = "close_all";
       };

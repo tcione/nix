@@ -15,4 +15,9 @@
     executable = true;
     source = ./files/hyprland-mute.sh;
   };
+
+  home.file."./.local/bin/screenshot.sh" = {
+    executable = true;
+    source = ./files/screenshot.sh;
+  };
 }

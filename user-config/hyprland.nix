@@ -165,8 +165,8 @@ in
       (modBind "ALT + s" ''hl.dsp.workspace.toggle_special("signal")'')
 
       # Screenshots
-      (modBind "P" ''hl.dsp.exec_cmd([[grim -t jpeg ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).jpg]])'')
-      (modBind "SHIFT + P" ''hl.dsp.exec_cmd([[grim -t jpeg -g "$(slurp)" ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).jpg]])'')
+      (modBind "P" ''hl.dsp.exec_cmd("${config.home.homeDirectory}/.local/bin/screenshot.sh full")'')
+      (modBind "SHIFT + P" ''hl.dsp.exec_cmd("${config.home.homeDirectory}/.local/bin/screenshot.sh region")'')
 
       # Power
       (modBind "SHIFT + BackSpace" ''hl.dsp.exec_cmd("${config.home.homeDirectory}/.local/bin/power-menu.sh")'')

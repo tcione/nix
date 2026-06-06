@@ -68,6 +68,7 @@
     hyprsunset
     impala
     kooha
+    satty
     slurp
     udiskie
     wl-clipboard
