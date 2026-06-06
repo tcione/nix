@@ -1,6 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
+  home.activation.reloadDunst = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    run ${pkgs.systemd}/bin/systemctl --user reload-or-restart dunst.service || true
+  '';
+
   services.dunst = {
     enable = true;
     iconTheme = {
