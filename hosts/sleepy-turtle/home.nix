@@ -68,7 +68,6 @@
     hyprsunset
     impala
     kooha
-    networkmanagerapplet
     slurp
     udiskie
     wl-clipboard
