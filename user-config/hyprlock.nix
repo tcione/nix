@@ -25,11 +25,11 @@
         monitor = "";
         dots_center = true;
         fade_on_empty = false;
-        font_color = "rgb(202, 211, 245)";
-        inner_color = "rgb(91, 96, 120)";
-        outer_color = "rgb(24, 25, 38)";
+        font_color = "$text";
+        inner_color = "$surface1";
+        outer_color = "$accent";
         outline_thickness = 5;
-        placeholder_text = "<span foreground=\"##cad3f5\">Password...</span>";
+        placeholder_text = "<span foreground=\"##cdd6f4\">Password...</span>";
         shadow_passes = 2;
       }
     ];

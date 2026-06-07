@@ -28,7 +28,7 @@
         progress_bar_min_width = 362;
         progress_bar_max_width = 362;
         progress_bar_corner_radius = 0;
-        highlight = "#FFFFFFFF";
+        highlight = "#CBA6F7FF";
         indicate_hidden = "yes";
         transparency = 0;
         separator_height = 2;
@@ -37,7 +37,7 @@
         text_icon_padding = 0;
         max_icon_size = 128;
         frame_width = 1;
-        frame_color = "#77777780";
+        frame_color = "#45475ADF";
         gap_size = 4;
         separator_color = "frame";
         sort = "yes";

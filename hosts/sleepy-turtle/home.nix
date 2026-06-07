@@ -90,8 +90,6 @@
     # - GTK stuff
     adwaita-icon-theme
     catppuccin-cursors
-    catppuccin-gtk
-    catppuccin-kde
     glib
 
     # - Fonts
@@ -139,7 +137,10 @@
     export MOZ_ENABLE_WAYLAND=1
     export QT_AUTO_SCREEN_SCALE_FACTOR=1
     export QT_QPA_PLATFORM=wayland;xcb
-    export QT_QPA_PLATFORMTHEME=qt5ct
+    export QT_QPA_PLATFORMTHEME=qt6ct
+    export QT_STYLE_OVERRIDE=kvantum
+    export QT_PLUGIN_PATH=${config.home.profileDirectory}/lib/qt-6/plugins
+    export QML2_IMPORT_PATH=${config.home.profileDirectory}/lib/qt-6/qml
     export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
     export SDL_VIDEODRIVER=wayland
     export XDG_CURRENT_DESKTOP=Hyprland
@@ -153,6 +154,7 @@
   imports = [
     ../../user-config/sops.nix
     ../../user-config/chromium.nix
+    ../../user-config/catppuccin.nix
     ../../user-config/nix-index.nix
     ../../user-config/dconf.nix
     ../../user-config/desktop-session-scripts.nix
@@ -170,6 +172,7 @@
     ../../user-config/hyprpaper.nix
     ../../user-config/imv.nix
     ../../user-config/neovim.nix
+    ../../user-config/qt.nix
     ../../user-config/starship.nix
     ../../user-config/sundial.nix
     ../../user-config/tmux.nix

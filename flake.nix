@@ -15,6 +15,7 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin.url = "github:catppuccin/nix";
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -80,6 +81,7 @@
             inputs.sops-nix.homeManagerModules.sops
             inputs.sundial.homeManagerModules.${system}.default
             inputs.nix-index-database.homeModules.nix-index
+            inputs.catppuccin.homeModules.catppuccin
             ./hosts/sleepy-turtle/home.nix
           ];
         }
