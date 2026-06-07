@@ -125,6 +125,15 @@
   time.timeZone = null;
   services.automatic-timezoned.enable = true;
 
+  services.geoclue2 = {
+    enable = true;
+    appConfig."sundial" = {
+      isAllowed = true;
+      isSystem = false;
+      users = [];
+    };
+  };
+
   users.defaultUserShell = pkgs.zsh;
   users.users.tortoise.isNormalUser = true;
   users.users.tortoise.extraGroups = [
