@@ -23,10 +23,6 @@
       url = "github:tcione/sundial";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    forest = {
-      url = "github:tcione/forest";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     elephant = {
       url = "github:abenz1267/elephant";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -69,7 +65,6 @@
           nixpkgs.overlays = [
             (
               final: prev: {
-               forest = inputs.forest.packages.${system}.default;
                pi = inputs.llm-agents.packages.${system}.pi;
              }
             )
@@ -84,7 +79,6 @@
             inputs.walker.homeManagerModules.default
             inputs.sops-nix.homeManagerModules.sops
             inputs.sundial.homeManagerModules.${system}.default
-            inputs.forest.homeManagerModules.${system}.default
             inputs.nix-index-database.homeModules.nix-index
             ./hosts/sleepy-turtle/home.nix
           ];

@@ -131,19 +131,24 @@
 
   home.sessionVariables.SSH_AUTH_SOCK = "${config.home.homeDirectory}/.1password/agent.sock";
 
-  programs.forest = {
-    enable = true;
-    settings = {
-      general = {
-        baseDir = "${config.home.homeDirectory}/Projects";
-        copy = [
-          ".env"
-          ".envrc"
-        ];
-        exec = [ ];
-      };
-    };
-  };
+  xdg.configFile."uwsm/env".text = ''
+    export ADW_DISABLE_PORTAL=1
+    export CLUTTER_BACKEND=wayland
+    export ELECTRON_OZONE_PLATFORM_HINT=wayland
+    export GTK_IM_MODULE=simple
+    export MOZ_ENABLE_WAYLAND=1
+    export QT_AUTO_SCREEN_SCALE_FACTOR=1
+    export QT_QPA_PLATFORM=wayland;xcb
+    export QT_QPA_PLATFORMTHEME=qt5ct
+    export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+    export SDL_VIDEODRIVER=wayland
+    export XDG_CURRENT_DESKTOP=Hyprland
+    export XDG_SESSION_DESKTOP=Hyprland
+    export XDG_SESSION_TYPE=wayland
+    export XKB_DEFAULT_LAYOUT=us
+    export XKB_DEFAULT_VARIANT=mac
+    export _JAVA_AWT_WM_NONEREPARENTING=1
+  '';
 
   imports = [
     ../../user-config/sops.nix

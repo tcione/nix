@@ -87,23 +87,7 @@ in
       misc.focus_on_activate = true;
     };
 
-    env = [
-      { _args = [ "CLUTTER_BACKEND" "wayland" ]; }
-      { _args = [ "ELECTRON_OZONE_PLATFORM_HINT" "wayland" ]; }
-      { _args = [ "MOZ_ENABLE_WAYLAND" "1" ]; }
-      { _args = [ "QT_AUTO_SCREEN_SCALE_FACTOR" "1" ]; }
-      { _args = [ "QT_QPA_PLATFORM" "wayland;xcb" ]; }
-      { _args = [ "QT_QPA_PLATFORMTHEME" "qt5ct" ]; }
-      { _args = [ "QT_WAYLAND_DISABLE_WINDOWDECORATION" "1" ]; }
-      { _args = [ "SDL_VIDEODRIVER" "wayland" ]; }
-      { _args = [ "XDG_CURRENT_DESKTOP" "Hyprland" ]; }
-      { _args = [ "XDG_SESSION_DESKTOP" "Hyprland" ]; }
-      { _args = [ "XDG_SESSION_TYPE" "wayland" ]; }
-      { _args = [ "XKB_DEFAULT_LAYOUT" "us" ]; }
-      { _args = [ "XKB_DEFAULT_VARIANT" "mac" ]; }
-      { _args = [ "_JAVA_AWT_WM_NONEREPARENTING" "1" ]; }
-      { _args = [ "GTK_IM_MODULE" "simple" ]; }
-    ];
+    env = [];
 
     monitor = [
       { output = ""; mode = "highres"; position = "auto"; scale = 1; }
