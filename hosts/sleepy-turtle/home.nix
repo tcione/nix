@@ -153,6 +153,7 @@
 
   imports = [
     ../../user-config/sops.nix
+    ../../user-config/atuin.nix
     ../../user-config/chromium.nix
     ../../user-config/catppuccin.nix
     ../../user-config/nix-index.nix

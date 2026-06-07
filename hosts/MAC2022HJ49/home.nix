@@ -44,6 +44,7 @@
 
   imports = [
     ../../user-config/sops.nix
+    ../../user-config/atuin.nix
     ../../user-config/nix-index.nix
     ../../user-config/direnv.nix
     ../../user-config/eza.nix

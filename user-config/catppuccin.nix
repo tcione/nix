@@ -12,6 +12,7 @@
       useDefaultConfig = false;
     };
     gtk.icon.enable = true;
+    atuin.enable = true;
     fzf.enable = true;
     starship.enable = true;
     yazi.enable = true;
