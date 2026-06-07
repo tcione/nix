@@ -122,8 +122,8 @@
     }
   ];
 
-  time.timeZone = "Europe/Berlin";
-  # time.timeZone = "America/Sao_Paulo";
+  time.timeZone = null;
+  services.automatic-timezoned.enable = true;
 
   users.defaultUserShell = pkgs.zsh;
   users.users.tortoise.isNormalUser = true;
