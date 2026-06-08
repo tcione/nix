@@ -145,7 +145,7 @@ in
       # Special spaces
       (modBind "minus" ''function() hl.dispatch("togglespecialworkspace") end'')
       (modBind "SHIFT + minus" ''hl.dsp.window.move({ workspace = "special" })'')
-      (modBind "ALT + t" ''hl.dsp.workspace.toggle_special("todoist")'')
+      (modBind "ALT + t" ''hl.dsp.workspace.toggle_special("todoist-eletron")'')
       (modBind "ALT + s" ''hl.dsp.workspace.toggle_special("signal")'')
 
       # Screenshots
