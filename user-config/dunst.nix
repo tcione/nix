@@ -35,7 +35,7 @@
         padding = 8;
         horizontal_padding = 8;
         text_icon_padding = 0;
-        max_icon_size = 128;
+        max_icon_size = 64;
         frame_width = 1;
         frame_color = "#45475ADF";
         gap_size = 4;

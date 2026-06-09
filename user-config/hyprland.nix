@@ -145,7 +145,7 @@ in
       # Special spaces
       (modBind "minus" ''function() hl.dispatch("togglespecialworkspace") end'')
       (modBind "SHIFT + minus" ''hl.dsp.window.move({ workspace = "special" })'')
-      (modBind "ALT + t" ''hl.dsp.workspace.toggle_special("todoist-eletron")'')
+      (modBind "ALT + t" ''hl.dsp.workspace.toggle_special("todoist")'')
       (modBind "ALT + s" ''hl.dsp.workspace.toggle_special("signal")'')
 
       # Screenshots
@@ -217,9 +217,9 @@ in
             hl.exec_cmd("blueman-applet")
             hl.exec_cmd("udiskie")
             hl.exec_cmd("systemctl --user start sundial")
-            hl.exec_cmd("1password --silent")
-            hl.exec_cmd("todoist-electron")
-            hl.exec_cmd("signal-desktop")
+            hl.exec_cmd("uwsm app -- 1password --silent")
+            hl.exec_cmd("uwsm app -- todoist-electron")
+            hl.exec_cmd("uwsm app -- signal-desktop")
           end
         '')
       ];
