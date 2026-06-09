@@ -93,14 +93,10 @@
     glib
 
     # - Fonts
-    atkinson-hyperlegible-mono
     atkinson-hyperlegible-next
-    fira
-    fira-code
-    fira-code-symbols
-    fira-mono
     font-awesome
     nerd-fonts.atkynson-mono
+    nerd-fonts.fira-code
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
@@ -108,13 +104,12 @@
 
   fonts.fontconfig.enable = true;
   fonts.fontconfig.defaultFonts.monospace = [
-    "Fira Code"
+    "FiraCode Nerd Font"
     "Noto Mono"
   ];
   fonts.fontconfig.defaultFonts.sansSerif = [
     "Atkinson Hyperlegible Next"
     "Noto Sans"
-    "Fira Sans"
   ];
   fonts.fontconfig.defaultFonts.serif = [
     "Noto Serif"

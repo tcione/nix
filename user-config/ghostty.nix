@@ -6,9 +6,10 @@
     package = if pkgs.stdenv.isDarwin then null else pkgs.ghostty;
     settings = {
       theme = "Catppuccin Mocha";
-      font-family = "Fira Code Medium";
+      font-family = "FiraCode Nerd Font Medium";
       font-size = if pkgs.stdenv.isDarwin then 16 else 12;
       font-feature = "+ss01 +ss02 +ss03 +ss04 +ss05 +ss07 +ss08 +zero +onum +calt";
+      font-thicken = true;
       window-padding-x = 2;
       window-padding-y = 2;
       cursor-style = "block";

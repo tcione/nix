@@ -41,7 +41,7 @@
         gap_size = 4;
         separator_color = "frame";
         sort = "yes";
-        font = "Noto Sans 10";
+        font = "Atkinson Hyperlegible Next 10";
         line_height = 0;
         markup = "full";
         format = "<b>%s</b>\n%b";

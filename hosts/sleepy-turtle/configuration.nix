@@ -26,6 +26,18 @@
   ];
   environment.variables.EDITOR = "vim";
 
+  fonts.fontconfig = {
+    antialias = true;
+    hinting = {
+      enable = true;
+      style = "slight";
+    };
+    subpixel = {
+      rgba = "rgb";
+      lcdfilter = "default";
+    };
+  };
+
   hardware.bluetooth.enable = true;
   hardware.bluetooth.settings.General.Experimental = true;
 
