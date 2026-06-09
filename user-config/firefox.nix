@@ -64,12 +64,8 @@ in
 
       extraConfig = (builtins.readFile arkenfoxUserJs) + "\n" + userOverrides;
 
-      containers = {
-        Email = { id = 1; icon = "fingerprint"; color = "red"; };
-        WhatsApp = { id = 2; icon = "fingerprint"; color = "green"; };
-        "E-commerce" = { id = 3; icon = "cart"; color = "orange"; };
-        Github = { id = 4; icon = "fingerprint"; color = "purple"; };
-      };
+      # Containers unmanaged: Temporary Containers mutates containers.json at
+      # runtime, conflicting with HM's read-only symlink.
     };
   };
 
