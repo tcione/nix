@@ -9,18 +9,22 @@ NixOS/nix-darwin configuration for two machines managed via flake.
 
 ## Key Commands
 
+Switches are run via `nh`, which handles privilege elevation itself — do
+**not** prefix with `sudo` (it elevates only the activation step and refuses to
+run as root). The flake is resolved from `$NH_FLAKE`.
+
 ```bash
 # Build and switch (NixOS)
-sudo nixos-rebuild switch --flake .#sleepy-turtle
+nh os switch -H sleepy-turtle
 
 # Build and switch (macOS)
-darwin-rebuild switch --flake .#MAC2022HJ49
+nh darwin switch -H MAC2022HJ49
 
 # Update flake inputs
 nix flake update
 
-# Check what will change
-nixos-rebuild dry-activate --flake .#sleepy-turtle
+# Check what will change (dry activation)
+nh os switch -n -H sleepy-turtle
 ```
 
 ## Structure
