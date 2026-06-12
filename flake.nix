@@ -43,6 +43,7 @@
       MAC2022HJ49 = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
+          { nixpkgs.overlays = [ inputs.llm-agents.overlays.default ]; }
           ./hosts/MAC2022HJ49/default.nix
           home-manager.darwinModules.home-manager {
             home-manager.useGlobalPkgs = true;
