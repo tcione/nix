@@ -120,8 +120,8 @@ in
       (modBind "Q" "hl.dsp.window.close()")
       (modBind "E" ''hl.dsp.exec_cmd("thunar")'')
       (modBind "Space" ''hl.dsp.window.float({ action = "toggle" })'')
-      (modBind "M" ''function() hl.window.fullscreen({ action = "toggle", mode = "maximized" }) end'')
-      (modBind "F" ''function() hl.window.fullscreen({ action = "toggle", mode = "fullscreen" }) end'')
+      (modBind "M" ''hl.dsp.window.fullscreen({ action = "toggle", mode = "maximized" })'')
+      (modBind "F" ''hl.dsp.window.fullscreen({ action = "toggle", mode = "fullscreen" })'')
       (modBind "D" ''hl.dsp.exec_cmd("walker")'')
       (modBind "B" ''hl.dsp.exec_cmd("firefox")'')
       (modBind "V" ''hl.dsp.exec_cmd([[cliphist list | walker --dmenu | cliphist decode | wl-copy]])'')
@@ -140,7 +140,6 @@ in
       (modBind "mouse_down" ''hl.dsp.focus({ workspace = "e+1" })'')
       (modBind "mouse_up" ''hl.dsp.focus({ workspace = "e-1" })'')
       (modBind "TAB" "hl.dsp.window.cycle_next()")
-      (modBind "SHIFT + TAB" ''function() hl.dispatch("focusurgentorlast") end'')
 
       # Special spaces
       (modBind "minus" ''function() hl.dispatch("togglespecialworkspace") end'')
