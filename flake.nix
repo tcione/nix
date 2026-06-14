@@ -68,6 +68,8 @@
             (
               final: prev: {
                pi = inputs.llm-agents.packages.${system}.pi;
+               claude-code = inputs.llm-agents.packages.${system}.claude-code;
+               opencode = inputs.llm-agents.packages.${system}.opencode;
              }
             )
           ];
