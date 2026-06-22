@@ -16,6 +16,7 @@
     bottom
     bruno
     bruno-cli
+    circleci-cli
     claude-code
     devenv
     e1s
@@ -25,6 +26,7 @@
     gobject-introspection
     jq
     libyaml
+    mypy
     nh
     ripgrep
     sops
